@@ -14,12 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         WPUser.shared.logout()
         if !WPUser.shared.connected {
-            WPUser.shared.connect(token: "CQolawEE/b//Oyo9HjKjUYVgLOM=",
-                                  secret: "cE1lZ214TWNocU9oS1NFdTYvdVV3Y01jOUxzPQ==")
+            WPUser.shared.connect(token: "<API TOKEN >",
+                                  secret: "<API SECRETE>")
         }
         WPUser.shared.lang = "fr"
         WPReportUploader.shared.sync()
-
+        WPLocationService.shared.startUpdateLocation()
         return true
     }
 

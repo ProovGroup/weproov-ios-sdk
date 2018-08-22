@@ -35,8 +35,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
     	super.viewDidLoad()
-
-        proovCodeField.text = "M8FBSU"
         openButton.addTarget(self, action: #selector(openReport))
     }
     
