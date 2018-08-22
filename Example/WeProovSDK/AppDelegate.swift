@@ -1,22 +1,34 @@
 //
-//  AppDelegate.swift
-//  WeProovSDK
-//
-//  Created by Jonathan VUKOVICH TRIBOUHARET on 08/22/2018.
-//  Copyright (c) 2018 Jonathan VUKOVICH TRIBOUHARET. All rights reserved.
+// Copyright © 2018 ProovGroup. All rights reserved.
 //
 
 import UIKit
+import WeProovSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        WPUser.shared.logout()
+        if !WPUser.shared.connected {
+            WPUser.shared.connect(token: "CQolawEE/b//Oyo9HjKjUYVgLOM=",
+                                  secret: "cE1lZ214TWNocU9oS1NFdTYvdVV3Y01jOUxzPQ==")
+        }
+        WPUser.shared.lang = "fr"
+        WPReportUploader.shared.sync()
+
         return true
+    }
+
+    func application(_: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+        if WPReportUploader.shared.handleEventsForBackgroundURLSession(identifier: identifier, completionHandler: completionHandler) {
+            return
+        }
+
+        completionHandler()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -41,6 +53,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-

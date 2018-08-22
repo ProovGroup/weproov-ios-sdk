@@ -1,0 +1,42 @@
+{
+  "name": "WeProovSDK",
+  "version": "0.1.0",
+  "summary": "A short description of WeProovSDK.",
+  "description": "Add long description of the pod here.",
+  "homepage": "https://github.com/ProovGroup/weproov-ios-sdk",
+  "license": {
+    "type": "ProovGroup License",
+    "file": "LICENSE"
+  },
+  "authors": "ProovGroup",
+  "source": {
+    "git": "https://github.com/ProovGroup/weproov-ios-sdk.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "ios": {
+    "vendored_frameworks": "WeProovSDK/WeProovSDK.framework"
+  },
+  "dependencies": {
+    "SnapKit": [
+      "~> 4.0"
+    ],
+    "JTMaterialSpinner": [
+
+    ],
+    "APAddressBook": [
+
+    ],
+    "ACEDrawingView": [
+
+    ],
+    "MBProgressHUD": [
+
+    ],
+    "FLAnimatedImage": [
+
+    ]
+  }
+}

@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		87651F18E1BFC4DECEF7CD50 /* Pods_WeProovSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9E982D8E9041E443A4C3C4 /* Pods_WeProovSDK_Example.framework */; };
+		AB38068A212D941800B0744B /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB380689212D941800B0744B /* CustomViewController.swift */; };
 		E952E840A732E065777B288A /* Pods_WeProovSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896760C58BE3E11BB3CE9895 /* Pods_WeProovSDK_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		21C1A3BE5B094C5963FE40E7 /* Pods-WeProovSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeProovSDK_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeProovSDK_Tests/Pods-WeProovSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		257F76386EB11F72B4B15CBA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		257F76386EB11F72B4B15CBA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		3BCE9C96091FD4B7877295C7 /* Pods-WeProovSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeProovSDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		53E2DB0C9EE74EB612FAD79F /* Pods-WeProovSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeProovSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeProovSDK_Tests/Pods-WeProovSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* WeProovSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeProovSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,8 +45,9 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		82832D8DC0554918E0B359DA /* Pods-WeProovSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeProovSDK_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		896760C58BE3E11BB3CE9895 /* Pods_WeProovSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeProovSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AA656060836FCEAA6E2395C /* WeProovSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = WeProovSDK.podspec; path = ../WeProovSDK.podspec; sourceTree = "<group>"; };
-		9EFFA0553385A0FF4DBBB796 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8AA656060836FCEAA6E2395C /* WeProovSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WeProovSDK.podspec; path = ../WeProovSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EFFA0553385A0FF4DBBB796 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AB380689212D941800B0744B /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		BE9E982D8E9041E443A4C3C4 /* Pods_WeProovSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeProovSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				AB380689212D941800B0744B /* CustomViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = NTX6F465S6;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -304,10 +308,22 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/WeProovSDK/WeProovSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/ACEDrawingView/ACEDrawingView.framework",
+				"${BUILT_PRODUCTS_DIR}/APAddressBook/APAddressBook.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/JTMaterialSpinner/JTMaterialSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${PODS_ROOT}/../../WeProovSDK/WeProovSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACEDrawingView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APAddressBook.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTMaterialSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WeProovSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB38068A212D941800B0744B /* CustomViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -410,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -456,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -469,10 +486,12 @@
 			baseConfigurationReference = 3BCE9C96091FD4B7877295C7 /* Pods-WeProovSDK_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NTX6F465S6;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WeProovSDK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "ProovGroup.WeProovSDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -484,10 +503,12 @@
 			baseConfigurationReference = 82832D8DC0554918E0B359DA /* Pods-WeProovSDK_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NTX6F465S6;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WeProovSDK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "ProovGroup.WeProovSDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
