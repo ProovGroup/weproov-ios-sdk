@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WeProovSDK_Example' do
+  pod 'WeProovSDK', :path => '../'
+
+  target 'WeProovSDK_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
