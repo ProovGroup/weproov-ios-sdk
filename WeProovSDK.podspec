@@ -14,8 +14,7 @@ Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.ios.vendored_frameworks = 'WeProovSDK/WeProovSDK.framework'
-  s.ios.public_header_files  = 'WeProovSDK/Wprv.framework/Headers/*.h'
+  s.ios.vendored_frameworks = 'WeProovSDK/WeProovSDK.framework', 'WeProovSDK/Wprv.framework'
   s.resources = 'WeProovSDK/WeProovSDK.framework/*.lproj/Localizable.strings'
   s.dependency 'ACEDrawingView', '~> 2.2'
   s.dependency 'APAddressBook', '~> 0.3'
