@@ -33,7 +33,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   WeProovSDK:
-    :commit: 9501c5c20d8d1f4e889f9b2532f9557bed54eb2d
+    :commit: a9225a90a6c14e0f6df469b089499530107c6cc9
     :git: https://github.com/ProovGroup/weproov-ios-sdk
 
 SPEC CHECKSUMS:
