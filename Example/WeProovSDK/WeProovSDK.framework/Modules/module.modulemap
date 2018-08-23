@@ -1,0 +1,11 @@
+framework module WeProovSDK {
+  umbrella header "WeProovSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module WeProovSDK.Swift {
+    header "WeProovSDK-Swift.h"
+    requires objc
+}
