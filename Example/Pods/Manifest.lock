@@ -33,7 +33,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   WeProovSDK:
-    :commit: a9225a90a6c14e0f6df469b089499530107c6cc9
+    :commit: b0ce68bff038193ec4f7e7a20dd400d103f6256c
     :git: https://github.com/ProovGroup/weproov-ios-sdk
 
 SPEC CHECKSUMS:
@@ -43,7 +43,7 @@ SPEC CHECKSUMS:
   JTMaterialSpinner: 3c4279fc0b72438c9e29712fd37cf616d20c613e
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  WeProovSDK: 7f1102e4400f74b4a2d1e819ed0a573452c131f2
+  WeProovSDK: 39fa75522a923fab7c99c0a0ceed7da941cc1e01
 
 PODFILE CHECKSUM: 69fde89dbef58fc52fcadba7c75988eb8bfd4b71
 

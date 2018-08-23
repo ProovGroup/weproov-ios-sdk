@@ -17,9 +17,11 @@
     "ios": "10.0"
   },
   "ios": {
-    "vendored_frameworks": "WeProovSDK/WeProovSDK.framework"
+    "vendored_frameworks": [
+      "WeProovSDK/WeProovSDK.framework",
+      "WeProovSDK/Wprv.framework"
+    ]
   },
-  "private_header_files": "WeProovSDK/Wprv.framework/Headers/*",
   "dependencies": {
     "ACEDrawingView": [
       "~> 2.2"
