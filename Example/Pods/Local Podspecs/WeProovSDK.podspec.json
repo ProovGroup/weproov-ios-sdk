@@ -19,24 +19,25 @@
   "ios": {
     "vendored_frameworks": "WeProovSDK/WeProovSDK.framework"
   },
+  "private_header_files": "WeProovSDK/Wprv.framework/Headers/*",
   "dependencies": {
-    "SnapKit": [
-      "~> 4.0"
-    ],
-    "JTMaterialSpinner": [
-
+    "ACEDrawingView": [
+      "~> 2.2"
     ],
     "APAddressBook": [
-
-    ],
-    "ACEDrawingView": [
-
-    ],
-    "MBProgressHUD": [
-
+      "~> 0.3"
     ],
     "FLAnimatedImage": [
-
+      "~> 1.0"
+    ],
+    "JTMaterialSpinner": [
+      "~> 2.0"
+    ],
+    "MBProgressHUD": [
+      "~> 1.1"
+    ],
+    "SnapKit": [
+      "~> 4.0"
     ]
   }
 }
