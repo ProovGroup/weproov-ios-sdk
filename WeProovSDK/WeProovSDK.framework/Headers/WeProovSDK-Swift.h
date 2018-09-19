@@ -235,17 +235,14 @@ SWIFT_CLASS("_TtC10WeProovSDK18WPReportDownloader")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-@interface WPReportDownloader (SWIFT_EXTENSION(WeProovSDK)) <PulldownloadManagerDelegate>
-- (void)onDownloadProgress:(NSInteger)total finished:(NSInteger)finished;
-@end
-
 @class ReportStruct;
 
 @interface WPReportDownloader (SWIFT_EXTENSION(WeProovSDK)) <ReportFullDelegate>
 - (void)onReportFullError:(NSError * _Nullable)error;
-- (void)onReportFullSuccess:(ReportStruct * _Null_unspecified)report;
+- (void)onReportFullSuccess:(ReportStruct * _Nullable)report;
 @end
+
+
 
 
 SWIFT_CLASS("_TtC10WeProovSDK15WPReportManager")
