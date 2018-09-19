@@ -14,7 +14,7 @@ Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.ios.vendored_frameworks = 'WeProovSDK/WeProovSDK.framework'
+  s.ios.vendored_frameworks = 'WeProovSDK/WeProovSDK.framework', 'WeProovSDK/Wprv.framework'
   s.dependency 'ACEDrawingView', '~> 2.2'
   s.dependency 'APAddressBook', '~> 0.3'
   s.dependency 'FLAnimatedImage', '~> 1.0'
