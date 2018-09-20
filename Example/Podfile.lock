@@ -4,19 +4,19 @@ PODS:
     - APAddressBook/Core (= 0.3.2)
   - APAddressBook/Core (0.3.2)
   - FLAnimatedImage (1.0.12)
-  - JTMaterialSpinner (2.0.3)
+  - JTMaterialSpinner (3.0.0)
   - MBProgressHUD (1.1.0)
-  - SnapKit (4.0.0)
-  - WeProovSDK (0.1.0):
+  - SnapKit (4.0.1)
+  - WeProovSDK (0.1.7):
     - ACEDrawingView (~> 2.2)
     - APAddressBook (~> 0.3)
     - FLAnimatedImage (~> 1.0)
-    - JTMaterialSpinner (~> 2.0)
+    - JTMaterialSpinner (~> 3.0)
     - MBProgressHUD (~> 1.1)
     - SnapKit (~> 4.0)
 
 DEPENDENCIES:
-  - WeProovSDK (from `https://github.com/ProovGroup/weproov-ios-sdk`)
+  - WeProovSDK (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -29,22 +29,17 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   WeProovSDK:
-    :git: https://github.com/ProovGroup/weproov-ios-sdk
-
-CHECKOUT OPTIONS:
-  WeProovSDK:
-    :commit: b0ce68bff038193ec4f7e7a20dd400d103f6256c
-    :git: https://github.com/ProovGroup/weproov-ios-sdk
+    :path: "../"
 
 SPEC CHECKSUMS:
   ACEDrawingView: fa6e8461682a54db3ac65151474fc77ef7e54fd2
   APAddressBook: e68ecaf95f2c323b625ae585a0d25fe505291286
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  JTMaterialSpinner: 3c4279fc0b72438c9e29712fd37cf616d20c613e
+  JTMaterialSpinner: c9b5f4b75a01eee868043e18eccb6e61f0e31431
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  WeProovSDK: 39fa75522a923fab7c99c0a0ceed7da941cc1e01
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  WeProovSDK: ff0f89ec01ccb5dfdb9c63bed36a5efa9dbf96a6
 
-PODFILE CHECKSUM: 69fde89dbef58fc52fcadba7c75988eb8bfd4b71
+PODFILE CHECKSUM: 6fbe65d023584e7617a535781ab3ec84c66f5769
 
 COCOAPODS: 1.5.3

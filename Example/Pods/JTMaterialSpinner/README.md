@@ -5,13 +5,13 @@
 ![License](https://img.shields.io/cocoapods/l/JTMaterialSpinner.svg)
 ![Platform](https://img.shields.io/cocoapods/p/JTMaterialSpinner.svg)
 
-An iOS spinner view based on material design.
+An iOS material design spinner view.
 
 ## Installation
 
 With [CocoaPods](http://cocoapods.org/), add this line to your Podfile.
 
-    pod 'JTMaterialSpinner', '~> 2.0'
+    pod 'JTMaterialSpinner', '~> 3.0'
 
 ## Screenshots
 
@@ -55,11 +55,11 @@ class ViewController: UIViewController {
 ## Requirements
 
 - iOS 8.0 or higher
-- Swift 3.0
+- Swift 4.2
 
 ## Author
 
-- [Jonathan Tribouharet](https://github.com/jonathantribouharet) ([@johntribouharet](https://twitter.com/johntribouharet))
+- [Jonathan VUKOVICH TRIBOUHARET](https://github.com/jonathantribouharet) ([@johnvuko](https://twitter.com/johnvuko))
 
 ## License
 

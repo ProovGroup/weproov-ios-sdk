@@ -18,7 +18,7 @@ Add long description of the pod here.
   s.dependency 'ACEDrawingView', '~> 2.2'
   s.dependency 'APAddressBook', '~> 0.3'
   s.dependency 'FLAnimatedImage', '~> 1.0'
-  s.dependency 'JTMaterialSpinner', '~> 2.0'
+  s.dependency 'JTMaterialSpinner', '~> 3.0'
   s.dependency 'MBProgressHUD', '~> 1.1'
   s.dependency 'SnapKit', '~> 4.0'  
 

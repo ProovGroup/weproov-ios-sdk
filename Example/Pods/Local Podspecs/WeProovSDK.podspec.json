@@ -1,6 +1,6 @@
 {
   "name": "WeProovSDK",
-  "version": "0.1.1",
+  "version": "0.1.7",
   "summary": "A short description of WeProovSDK.",
   "description": "Add long description of the pod here.",
   "homepage": "https://github.com/ProovGroup/weproov-ios-sdk",
@@ -11,7 +11,7 @@
   "authors": "ProovGroup",
   "source": {
     "git": "https://github.com/ProovGroup/weproov-ios-sdk.git",
-    "tag": "0.1.1"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "10.0"
@@ -20,12 +20,6 @@
     "vendored_frameworks": [
       "WeProovSDK/WeProovSDK.framework",
       "WeProovSDK/Wprv.framework"
-    ]
-  },
-  "resource_bundles": {
-    "WeProov": [
-      "WeProovSDK/WeProovSDK.framework/*.lproj/Localizable.strings",
-      "WeProovSDK/WeProovSDK.framework/Assets.car"
     ]
   },
   "dependencies": {
@@ -39,7 +33,7 @@
       "~> 1.0"
     ],
     "JTMaterialSpinner": [
-      "~> 2.0"
+      "~> 3.0"
     ],
     "MBProgressHUD": [
       "~> 1.1"
