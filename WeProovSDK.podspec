@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WeProovSDK'
-  s.version          = '0.1.7'
+  s.version          = '0.1.9'
   s.summary          = 'A short description of WeProovSDK.'
 
   s.description      = <<-DESC
