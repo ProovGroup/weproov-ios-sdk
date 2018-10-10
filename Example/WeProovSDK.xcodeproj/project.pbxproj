@@ -15,6 +15,8 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		87651F18E1BFC4DECEF7CD50 /* Pods_WeProovSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9E982D8E9041E443A4C3C4 /* Pods_WeProovSDK_Example.framework */; };
 		AB38068A212D941800B0744B /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB380689212D941800B0744B /* CustomViewController.swift */; };
+		AB402689216DEF0F00769C70 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB402687216DEF0E00769C70 /* CustomNavigationController.swift */; };
+		AB40268A216DEF0F00769C70 /* ReportPortraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB402688216DEF0F00769C70 /* ReportPortraitViewController.swift */; };
 		E952E840A732E065777B288A /* Pods_WeProovSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896760C58BE3E11BB3CE9895 /* Pods_WeProovSDK_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		8AA656060836FCEAA6E2395C /* WeProovSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WeProovSDK.podspec; path = ../WeProovSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EFFA0553385A0FF4DBBB796 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		AB380689212D941800B0744B /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		AB402687216DEF0E00769C70 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		AB402688216DEF0F00769C70 /* ReportPortraitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportPortraitViewController.swift; sourceTree = "<group>"; };
 		BE9E982D8E9041E443A4C3C4 /* Pods_WeProovSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeProovSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +119,8 @@
 		607FACD21AFB9204008FA782 /* Example for WeProovSDK */ = {
 			isa = PBXGroup;
 			children = (
+				AB402687216DEF0E00769C70 /* CustomNavigationController.swift */,
+				AB402688216DEF0F00769C70 /* ReportPortraitViewController.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				AB380689212D941800B0744B /* CustomViewController.swift */,
@@ -338,7 +344,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB402689216DEF0F00769C70 /* CustomNavigationController.swift in Sources */,
 				AB38068A212D941800B0744B /* CustomViewController.swift in Sources */,
+				AB40268A216DEF0F00769C70 /* ReportPortraitViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
