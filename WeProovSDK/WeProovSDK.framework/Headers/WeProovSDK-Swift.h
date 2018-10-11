@@ -201,13 +201,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-
-
-
-@interface UIViewController (SWIFT_EXTENSION(WeProovSDK))
-- (void)dismiss;
-@end
-
 @class CLLocationManager;
 @class CLLocation;
 
@@ -221,8 +214,15 @@ SWIFT_CLASS("_TtC10WeProovSDK17WPLocationService")
 @class NSBundle;
 @class NSCoder;
 
+SWIFT_CLASS("_TtC10WeProovSDK4WPVC")
+@interface WPVC : UIViewController
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC10WeProovSDK30WPReportDownloadViewController")
-@interface WPReportDownloadViewController : UIViewController
+@interface WPReportDownloadViewController : WPVC
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)loadView;
@@ -275,7 +275,7 @@ SWIFT_CLASS("_TtC10WeProovSDK12WPReportView")
 
 
 SWIFT_CLASS("_TtC10WeProovSDK22WPReportViewController")
-@interface WPReportViewController : UIViewController
+@interface WPReportViewController : WPVC
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER;
 - (void)loadView;
 - (void)viewDidLoad;
@@ -297,6 +297,7 @@ SWIFT_CLASS("_TtC10WeProovSDK6WPUser")
 - (void)onUserError:(NSError * _Null_unspecified)e;
 - (void)onUserSuccess:(UserStruct * _Null_unspecified)_;
 @end
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
