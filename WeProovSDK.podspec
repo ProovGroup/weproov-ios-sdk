@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WeProovSDK'
-  s.version          = '0.2.1'
+  s.version          = '0.3.0'
   s.summary          = 'A short description of WeProovSDK.'
 
   s.description      = <<-DESC
@@ -14,7 +14,7 @@ Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.ios.vendored_frameworks = 'WeProovSDK/WeProovSDK.framework', 'WeProovSDK/Wprv.framework'
+  s.ios.vendored_frameworks = 'WeProovSDK/WeProovSDK.framework'
   s.dependency 'ACEDrawingView', '~> 2.2'
   s.dependency 'APAddressBook', '~> 0.3'
   s.dependency 'FLAnimatedImage', '~> 1.0'

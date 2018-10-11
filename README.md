@@ -45,7 +45,7 @@ Ajouter les clées n'ecessaire pour avoir access a la camera et au gps dans
 ### Import
 
 ```
-import WeProovSDK
+import Wprv
 ```
 
 ### Connection 

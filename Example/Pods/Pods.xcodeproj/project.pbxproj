@@ -243,6 +243,7 @@
 		2F65BBEA5301B57240624BAD0BD2D9C3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30D1EFD03615C86F4DA201353CF2962C /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		323108A13ACFD40686A011D274EAEE71 /* Pods-WeProovSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeProovSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
+		32734140EC0CF7409C74760594E8A0D8 /* WeProovSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeProovSDK.framework; path = WeProovSDK/WeProovSDK.framework; sourceTree = "<group>"; };
 		32BA06A89A114274CE18CE9A61637F6F /* FLAnimatedImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImageView.m; path = FLAnimatedImage/FLAnimatedImageView.m; sourceTree = "<group>"; };
 		342FC5A848116D00DEA1A2A93AA856A4 /* APTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APTypes.h; path = Pod/Core/Public/Models/APTypes.h; sourceTree = "<group>"; };
 		343BD6AC7467B9B280E66262D62A5F07 /* ACEDrawingTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ACEDrawingTools.m; path = ACEDrawingView/ACEDrawingTools.m; sourceTree = "<group>"; };
@@ -289,7 +290,6 @@
 		660AF9F5708B40ADF9FF9B5A4E48D1AF /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		6670D786A2361F33CD374AAD2475E136 /* APThread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APThread.h; path = Pod/Core/Private/Thread/APThread.h; sourceTree = "<group>"; };
 		66712CFFBB61947BAA1F97AF241895A6 /* APImageExtractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APImageExtractor.h; path = Pod/Core/Private/Extractors/APImageExtractor.h; sourceTree = "<group>"; };
-		67542C6BB4AF641086CB2F41AE279624 /* WeProovSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WeProovSDK.framework; path = WeProovSDK/WeProovSDK.framework; sourceTree = "<group>"; };
 		6B57E2BA7D4296EE60F320F8B6800108 /* APAddressBook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APAddressBook.h; path = Pod/Core/Public/APAddressBook.h; sourceTree = "<group>"; };
 		6B6E7DD43BF6869F52E34592B2224E58 /* APSocialProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APSocialProfile.h; path = Pod/Core/Public/Models/APSocialProfile.h; sourceTree = "<group>"; };
 		6B7FBB2DD4B23C3E78995FCC26BE5C5B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
@@ -307,7 +307,6 @@
 		81F75294B815C19D14DE09EE90523AE5 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		81FC988CDC5399C24E0EF06733756B40 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
 		82D31FF7A2F876EB3C237D5C46952CC6 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		849A8FE7868E8A8ACAC4E0730485093C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		861E625365C886701D77BBA9CA4A895C /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		876DE91B7FFFB2F9F2B44033C558EE71 /* APContactListBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APContactListBuilder.m; path = Pod/Core/Private/Builders/APContactListBuilder.m; sourceTree = "<group>"; };
 		87B0555294631DC928D61875A4546ED9 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
@@ -315,7 +314,6 @@
 		8B2F49DBBBE4E53D7D5AE7475FBE7723 /* ACEDrawingView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ACEDrawingView.modulemap; sourceTree = "<group>"; };
 		8B9563C15FB5E0E8094CA5D50E263A25 /* APContact.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APContact.m; path = Pod/Core/Public/Models/APContact.m; sourceTree = "<group>"; };
 		8C85419A56BF01CD097A642874062FEE /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
-		91F147349F74723744A6F538150F19C8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		939B86423040E9554B5853E03FA38D30 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93CE22E699D1411A7F0AD5F1DD5215EE /* APAddressBookContactsRoutine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APAddressBookContactsRoutine.m; path = Pod/Core/Private/Routine/APAddressBookContactsRoutine.m; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 		9DE7442EB1F916A827A44BAC4F7AE604 /* APAddressBookExternalChangeRoutine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APAddressBookExternalChangeRoutine.h; path = Pod/Core/Private/Routine/APAddressBookExternalChangeRoutine.h; sourceTree = "<group>"; };
 		9E417A94CF3E864E5248A047538C2F83 /* JTMaterialSpinner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTMaterialSpinner.xcconfig; sourceTree = "<group>"; };
 		9EB5AD5111FE5657C9B9EEB04E4A9D19 /* ACEDrawingView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ACEDrawingView-prefix.pch"; sourceTree = "<group>"; };
-		A2D9B111665FD6ACE02038F45B27774D /* Wprv.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Wprv.framework; path = WeProovSDK/Wprv.framework; sourceTree = "<group>"; };
 		A2FF0C38FF0369168ECC270AAC6C5594 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A47BD250ADE997258D53B29F61E219F9 /* APContactDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APContactDate.m; path = Pod/Core/Public/Models/APContactDate.m; sourceTree = "<group>"; };
 		A7BC4EB6346A15577A49829DAE64EE05 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
@@ -342,7 +339,6 @@
 		B8741E1F8EA21287AD7F02F3E9C25234 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
 		B8D62756E3EA86871C734F80A279039A /* APAddressBook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APAddressBook.m; path = Pod/Core/Public/APAddressBook.m; sourceTree = "<group>"; };
 		B94631B275DBD517287177BFDA1D3D25 /* APImageExtractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APImageExtractor.m; path = Pod/Core/Private/Extractors/APImageExtractor.m; sourceTree = "<group>"; };
-		BB8F26A6CC0808A50613DD292ED0B284 /* WeProovSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = WeProovSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BC622A18C7496477D55320174AEC9D71 /* Pods-WeProovSDK_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeProovSDK_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		BC69856B097DFAF18EA4E38E17256A09 /* APSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APSource.m; path = Pod/Core/Public/Models/APSource.m; sourceTree = "<group>"; };
 		BE566CD4001244977682240071E19C75 /* Pods-WeProovSDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeProovSDK_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -367,6 +363,7 @@
 		DC6D8773412923AF2CC3E5462680B09C /* APThread.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APThread.m; path = Pod/Core/Private/Thread/APThread.m; sourceTree = "<group>"; };
 		DCD0E243541EEDEE109E1444DBC2BE63 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		DFDCC2D6ACCA4D6675AAD87F7CDA2AE8 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
+		E02857E37001D73653CC26DF37F360FB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		E221AFC8C31D44122E5967A4E38AE60F /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E422F56D00459F7A574223B01E637227 /* APAddressBookBaseRoutine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APAddressBookBaseRoutine.m; path = Pod/Core/Private/Routine/Base/APAddressBookBaseRoutine.m; sourceTree = "<group>"; };
 		E4FE0890147DF2E78BB15A23993D6196 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
@@ -376,6 +373,7 @@
 		EC6CC5A897B96D3B80DF590127BFFBF4 /* Pods-WeProovSDK_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeProovSDK_Tests-resources.sh"; sourceTree = "<group>"; };
 		EE483FC112E870AAE87A6DAF96B3AA4D /* APContactDataExtractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APContactDataExtractor.h; path = Pod/Core/Private/Extractors/APContactDataExtractor.h; sourceTree = "<group>"; };
 		EFB79AD2A26B13AA37427EF2F973EA22 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
+		F4549CFD8F086C2A5B38D264547A3F53 /* WeProovSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = WeProovSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F4ABD482E353179F09CE566D59469285 /* APAddressBookBaseRoutine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APAddressBookBaseRoutine.h; path = Pod/Core/Private/Routine/Base/APAddressBookBaseRoutine.h; sourceTree = "<group>"; };
 		F4F7794021CB9899F552AC6C155996EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F57E9801F21987D7D04FA5FCFA9DD55F /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/AddressBook.framework; sourceTree = DEVELOPER_DIR; };
@@ -386,6 +384,7 @@
 		FC4FDBC2395DCE6D82B1F6C8D75D2CB3 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		FCAB5F868C9A5130C3568BEB9E129B7A /* Pods-WeProovSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeProovSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FD1942F2D4D71AD7DDBD45F8DD4CEDFF /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
+		FD94C08BAB0E10537FA2ACE84607EF3C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		FE9434236BBB07DF6EBC3151D15911EA /* Pods-WeProovSDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeProovSDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		FFB55ECCEAE73D005E4B07D76CC68EA0 /* APName.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APName.m; path = Pod/Core/Public/Models/APName.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -508,10 +507,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		148522EB531567E8043104BDACC41B1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32734140EC0CF7409C74760594E8A0D8 /* WeProovSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		347827A20B88D2F0B9F44D152F25F4DF /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				56AE12787D7A04C2C355E7E4B98CF695 /* WeProovSDK */,
+				AA74C71D6A299C9ADB4C2C4ED5ADF73F /* WeProovSDK */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -573,16 +580,6 @@
 			path = ACEDrawingView;
 			sourceTree = "<group>";
 		};
-		56AE12787D7A04C2C355E7E4B98CF695 /* WeProovSDK */ = {
-			isa = PBXGroup;
-			children = (
-				7EE7C669338EAEA4E678BF3DF90EF060 /* Frameworks */,
-				B86B2D87B36D045BC3C13C560F2AA424 /* Pod */,
-			);
-			name = WeProovSDK;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		61727A5E3C9AA20CEA3791881D84C684 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +608,16 @@
 			path = "../Target Support Files/MBProgressHUD";
 			sourceTree = "<group>";
 		};
+		7D6C92DE78C6E078EE4DD1F3528E4C52 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				FD94C08BAB0E10537FA2ACE84607EF3C /* LICENSE */,
+				E02857E37001D73653CC26DF37F360FB /* README.md */,
+				F4549CFD8F086C2A5B38D264547A3F53 /* WeProovSDK.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -621,15 +628,6 @@
 				4CEE683C5C0E7DBD8CA13C7BDBAB62E9 /* Products */,
 				349B771B3DE0125693610072230D0EB4 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		7EE7C669338EAEA4E678BF3DF90EF060 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				67542C6BB4AF641086CB2F41AE279624 /* WeProovSDK.framework */,
-				A2D9B111665FD6ACE02038F45B27774D /* Wprv.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		91659E5F72B2A727A3B9D3F8F0FD75E4 /* SnapKit */ = {
@@ -698,6 +696,16 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		AA74C71D6A299C9ADB4C2C4ED5ADF73F /* WeProovSDK */ = {
+			isa = PBXGroup;
+			children = (
+				148522EB531567E8043104BDACC41B1C /* Frameworks */,
+				7D6C92DE78C6E078EE4DD1F3528E4C52 /* Pod */,
+			);
+			name = WeProovSDK;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		B582E778C673343A03EE4FF1B940EA94 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -752,16 +760,6 @@
 				342FC5A848116D00DEA1A2A93AA856A4 /* APTypes.h */,
 			);
 			name = Core;
-			sourceTree = "<group>";
-		};
-		B86B2D87B36D045BC3C13C560F2AA424 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				91F147349F74723744A6F538150F19C8 /* LICENSE */,
-				849A8FE7868E8A8ACAC4E0730485093C /* README.md */,
-				BB8F26A6CC0808A50613DD292ED0B284 /* WeProovSDK.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		B877FB34FA531FEDA1A0011BF4E5D2E5 /* Support Files */ = {

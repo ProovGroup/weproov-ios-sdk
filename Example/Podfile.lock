@@ -4,10 +4,10 @@ PODS:
     - APAddressBook/Core (= 0.3.2)
   - APAddressBook/Core (0.3.2)
   - FLAnimatedImage (1.0.12)
-  - JTMaterialSpinner (3.0.0)
+  - JTMaterialSpinner (3.0.3)
   - MBProgressHUD (1.1.0)
   - SnapKit (4.0.1)
-  - WeProovSDK (0.2.1):
+  - WeProovSDK (0.3.0):
     - ACEDrawingView (~> 2.2)
     - APAddressBook (~> 0.3)
     - FLAnimatedImage (~> 1.0)
@@ -35,10 +35,10 @@ SPEC CHECKSUMS:
   ACEDrawingView: fa6e8461682a54db3ac65151474fc77ef7e54fd2
   APAddressBook: e68ecaf95f2c323b625ae585a0d25fe505291286
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  JTMaterialSpinner: c9b5f4b75a01eee868043e18eccb6e61f0e31431
+  JTMaterialSpinner: 95e86472668c18f67f5d9395dfe15251d6894448
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
-  WeProovSDK: df56f4c2cb2a33db1c761e8cc688516a37d23d85
+  WeProovSDK: c413bfafe54f71692fcfb5997793fc1576aad96d
 
 PODFILE CHECKSUM: 6fbe65d023584e7617a535781ab3ec84c66f5769
 
