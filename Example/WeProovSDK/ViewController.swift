@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
     	super.viewDidLoad()
-        openButton.addTarget(self, action: #selector(openReport))
+        openButton.addTarget(self, action: #selector(openReport), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,14 +65,14 @@ extension ViewController: WPReportDownloaderDelegate {
     func reportDidLoad(downloader _: WPReportDownloader, report: WPReport) {
         if let controller = presentedViewController as? WPReportDownloadViewController {
             controller.updateProgression(value: 1)
-            controller.dismiss()
+            controller.dismiss(animated: true)
         }
         // Creation d'un theme pour changer les couleur
         var theme = WPTheme()
         // change la couleur pour le rapport initial
-        theme.reportInitialColor = UIColor(hexString: "#67BB0F9")
+        theme.reportInitialColor = UIColor(red: 103 / 255, green: 187 / 255, blue: 15 / 255, alpha: 1)
         // change la couleur pour le rapport final
-        theme.reportFinalColor = UIColor(hexString: "#67BB0F9")
+        theme.reportFinalColor = UIColor(red: 103 / 255, green: 187 / 255, blue: 15 / 255, alpha: 1)
         // creer une vue totalement manager en chengant le theme
         let controller = WPReportViewController(report: report, theme: theme)
         if let nc = navigationController {
@@ -84,7 +84,7 @@ extension ViewController: WPReportDownloaderDelegate {
 
     func reportFailedToLoad(downloader _: WPReportDownloader, error: Error?) {
         if let controller = presentedViewController as? WPReportDownloadViewController {
-            controller.dismiss()
+            controller.dismiss(animated: true)
         }
         print("reportFailedToLoad", error ?? "unknown error")
     }

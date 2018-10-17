@@ -17,7 +17,15 @@
     "ios": "10.0"
   },
   "ios": {
-    "vendored_frameworks": "WeProovSDK/WeProovSDK.framework"
+    "vendored_frameworks": [
+      "WeProovSDK/WeProovSDK.framework"
+    ]
+  },
+  "user_target_xcconfig": {
+    "FRAMEWORK_SEARCH_PATHS": [
+      "$(inherited)",
+      "\"/Users/jonathan/Desktop/Codage/WeProov/weproov-ios-sdk\""
+    ]
   },
   "dependencies": {
     "ACEDrawingView": [

@@ -56,12 +56,12 @@ extension CustomViewController: WPReportDownloaderDelegate {
     func reportDidLoad(downloader _: WPReportDownloader, report: WPReport) {
         if let controller = presentedViewController as? WPReportDownloadViewController {
             controller.updateProgression(value: 1)
-            controller.dismiss()
+            controller.dismiss(animated: true)
         }
         var theme = WPTheme()
         // Personalise les couleurs principal du framework
-        theme.reportInitialColor = UIColor(hexString: "#67BB0F9")
-        theme.reportFinalColor = UIColor(hexString: "#67BB0F9")
+        theme.reportInitialColor = UIColor(red: 103 / 255, green: 187 / 255, blue: 15 / 255, alpha: 1)
+        theme.reportFinalColor = UIColor(red: 103 / 255, green: 187 / 255, blue: 15 / 255, alpha: 1)
 
         manager = WPReportManager(controller: self, report: report, theme: theme)
         manager?.delegate = self
@@ -70,9 +70,9 @@ extension CustomViewController: WPReportDownloaderDelegate {
 
     func reportFailedToLoad(downloader _: WPReportDownloader, error: Error?) {
         if let controller = presentedViewController as? WPReportDownloadViewController {
-            controller.dismiss()
+            controller.dismiss(animated: true)
         }
-        dismiss()
+        dismiss(animated: true)
         print("reportFailedToLoad", error ?? "unknown error")
     }
 
@@ -94,7 +94,7 @@ extension CustomViewController: WPReportManagerDelegate {
     }
 
     func reportClosed(manager _: WPReportManager) {
-        dismiss()
+        dismiss(animated: true)
     }
 }
 
