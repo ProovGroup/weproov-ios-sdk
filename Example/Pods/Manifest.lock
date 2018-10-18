@@ -38,7 +38,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   WeProovWprv:
-    :commit: 9a81311dc51d625f577af7fb15e5f01e9e118e8f
+    :commit: b792dd7b721702497b9eeda2de3e82d80808b3f1
     :git: "git@github.com:ProovGroup/weproov-ios-wprv.git"
 
 SPEC CHECKSUMS:
