@@ -21,6 +21,9 @@
       "WeProovSDK/WeProovSDK.framework"
     ]
   },
+  "pod_target_xcconfig": {
+    "ENABLE_BITCODE": "NO"
+  },
   "user_target_xcconfig": {
     "ENABLE_BITCODE": "NO"
   },

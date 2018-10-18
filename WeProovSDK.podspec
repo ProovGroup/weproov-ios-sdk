@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/ProovGroup/weproov-ios-sdk.git', :tag => s.version.to_s }
   s.ios.deployment_target = '10.0'
   s.ios.vendored_frameworks = ['WeProovSDK/WeProovSDK.framework']
+  s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' } # because of `WeProovWprv`
   s.user_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' } # because of `WeProovWprv`
 
   s.dependency 'WeProovWprv'
