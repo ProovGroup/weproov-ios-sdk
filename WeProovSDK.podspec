@@ -14,7 +14,7 @@ Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.ios.vendored_frameworks = ['WeProovSDK/WeProovSDK.framework']
+  s.ios.vendored_frameworks = ['WeProovSDK/WeProovSDK.framework', 'WeProovSDK/Wprv.framework']
   s.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => ['$(inherited)', '"' + Dir.pwd + '"'] }
 
   s.dependency 'ACEDrawingView', '~> 2.2'
