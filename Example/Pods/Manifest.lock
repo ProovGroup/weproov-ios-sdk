@@ -14,9 +14,12 @@ PODS:
     - JTMaterialSpinner (~> 3.0)
     - MBProgressHUD (~> 1.1)
     - SnapKit (~> 4.0)
+    - WeProovWprv
+  - WeProovWprv (1.0.0)
 
 DEPENDENCIES:
   - WeProovSDK (from `../`)
+  - "WeProovWprv (from `git@github.com:ProovGroup/weproov-ios-wprv.git`)"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -30,6 +33,13 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   WeProovSDK:
     :path: "../"
+  WeProovWprv:
+    :git: "git@github.com:ProovGroup/weproov-ios-wprv.git"
+
+CHECKOUT OPTIONS:
+  WeProovWprv:
+    :commit: 9a81311dc51d625f577af7fb15e5f01e9e118e8f
+    :git: "git@github.com:ProovGroup/weproov-ios-wprv.git"
 
 SPEC CHECKSUMS:
   ACEDrawingView: fa6e8461682a54db3ac65151474fc77ef7e54fd2
@@ -38,8 +48,9 @@ SPEC CHECKSUMS:
   JTMaterialSpinner: 95e86472668c18f67f5d9395dfe15251d6894448
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
-  WeProovSDK: bfa142348af32f4d5285361a5d9512dd426bc89b
+  WeProovSDK: 5b2f94e181017deac84b7407f3ec25b91c433763
+  WeProovWprv: e9174a69c67d9fa71639f4e7332752c53bc5fe36
 
-PODFILE CHECKSUM: 6fbe65d023584e7617a535781ab3ec84c66f5769
+PODFILE CHECKSUM: c9af8fb32b0fc91564415b652877214803973a69
 
 COCOAPODS: 1.5.3

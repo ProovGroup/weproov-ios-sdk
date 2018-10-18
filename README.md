@@ -17,7 +17,8 @@ WeProovSDK is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'WeProovSDK', :git => "https://github.com/ProovGroup/weproov-ios-sdk"
+pod 'WeProovSDK', :git => 'https://github.com/ProovGroup/weproov-ios-sdk'
+pod 'WeProovWprv', :git => 'git@github.com:ProovGroup/weproov-ios-wprv.git'
 ```
 
 ### Include Framwork

@@ -1,14 +1,14 @@
 {
   "name": "WeProovSDK",
   "version": "0.3.0",
-  "summary": "A short description of WeProovSDK.",
-  "description": "Add long description of the pod here.",
-  "homepage": "https://github.com/ProovGroup/weproov-ios-sdk",
+  "summary": "A short description of WeProovSDK",
+  "description": "A long description of WeProovSDK",
   "license": {
     "type": "ProovGroup License",
     "file": "LICENSE"
   },
   "authors": "ProovGroup",
+  "homepage": "https://github.com/ProovGroup/weproov-ios-sdk",
   "source": {
     "git": "https://github.com/ProovGroup/weproov-ios-sdk.git",
     "tag": "0.3.0"
@@ -18,17 +18,13 @@
   },
   "ios": {
     "vendored_frameworks": [
-      "WeProovSDK/WeProovSDK.framework",
-      "WeProovSDK/Wprv.framework"
-    ]
-  },
-  "user_target_xcconfig": {
-    "FRAMEWORK_SEARCH_PATHS": [
-      "$(inherited)",
-      "\"/Users/jonathan/Desktop/Codage/WeProov/weproov-ios-sdk\""
+      "WeProovSDK/WeProovSDK.framework"
     ]
   },
   "dependencies": {
+    "WeProovWprv": [
+
+    ],
     "ACEDrawingView": [
       "~> 2.2"
     ],
