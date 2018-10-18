@@ -21,6 +21,9 @@
       "WeProovSDK/WeProovSDK.framework"
     ]
   },
+  "user_target_xcconfig": {
+    "ENABLE_BITCODE": "NO"
+  },
   "dependencies": {
     "WeProovWprv": [
 
