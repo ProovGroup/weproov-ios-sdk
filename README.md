@@ -1,6 +1,6 @@
 # WeProovSDK
 
-[![CI Status](https://img.shields.io/travis/ProovGroup/weproov-ios-sdk.svg?style=flat)](https://travis-ci.com/ProovGroup/weproov-ios-sdk)
+[![CI Status](https://img.shields.io/travis/ProovGroup/weproov-ios-sdk.svg?style=flat)](https://travis-ci.org/ProovGroup/weproov-ios-sdk)
 [![Version](https://img.shields.io/cocoapods/v/WeProovSDK.svg?style=flat)](https://cocoapods.org/pods/WeProovSDK)
 [![License](https://img.shields.io/cocoapods/l/WeProovSDK.svg?style=flat)](https://cocoapods.org/pods/WeProovSDK)
 [![Platform](https://img.shields.io/cocoapods/p/WeProovSDK.svg?style=flat)](https://cocoapods.org/pods/WeProovSDK)
@@ -18,7 +18,6 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'WeProovSDK', :git => 'https://github.com/ProovGroup/weproov-ios-sdk'
-pod 'WeProovWprv', :git => 'git@github.com:ProovGroup/weproov-ios-wprv.git'
 ```
 
 ### Include Framwork
