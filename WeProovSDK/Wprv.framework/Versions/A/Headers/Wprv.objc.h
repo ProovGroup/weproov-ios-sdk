@@ -9,6 +9,7 @@
 @import Foundation;
 #include "Universe.objc.h"
 
+#include "Fscache.objc.h"
 
 FOUNDATION_EXPORT void WprvClearCache(void);
 
