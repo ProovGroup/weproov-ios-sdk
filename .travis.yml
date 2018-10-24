@@ -15,3 +15,4 @@ script:
   - xcodebuild -version
   - xcodebuild -showsdks
   - xcodebuild ONLY_ACTIVE_ARCH=NO ARCHS="x86_64 arm64" -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug build | xcpretty
+  - xcodebuild ONLY_ACTIVE_ARCH=NO ARCHS="x86_64 arm64" -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release build | xcpretty
