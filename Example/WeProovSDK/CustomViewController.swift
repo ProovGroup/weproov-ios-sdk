@@ -62,7 +62,10 @@ extension CustomViewController: WPReportDownloaderDelegate {
         // Personalise les couleurs principal du framework
         theme.reportInitialColor = UIColor(red: 103 / 255, green: 187 / 255, blue: 15 / 255, alpha: 1)
         theme.reportFinalColor = UIColor(red: 103 / 255, green: 187 / 255, blue: 15 / 255, alpha: 1)
-
+        theme.termsOfService = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        theme.termsOfServiceURL = URL(string: "https://www.example.com/tos")!
+        theme.privacyURL = URL(string: "https://www.example.com/privacy")!
+        
         manager = WPReportManager(controller: self, report: report, theme: theme)
         manager?.delegate = self
         manager?.load(reportView: reportView)
@@ -89,12 +92,15 @@ extension CustomViewController: WPReportDownloaderDelegate {
 }
 
 extension CustomViewController: WPReportManagerDelegate {
-    func reportCurrentSectionDidChanged(manager: WPReportManager, section: Int) {
+    func reportCurrentSectionDidChange(manager: WPReportManager, section: Int) {
         title = manager.sections[section]
     }
 
-    func reportClosed(manager _: WPReportManager) {
-        dismiss(animated: true)
+    func reportDidClose(manager _: WPReportManager) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func reportDidSubmit(manager _: WPReportManager) {
     }
 }
 

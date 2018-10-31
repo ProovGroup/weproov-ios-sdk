@@ -151,13 +151,18 @@ class CustomViewController: UIViewController {
 ### WPReportManagerDelegate
 ```
 extension CustomViewController: WPReportManagerDelegate {
-    // permet de recuperer quand l'utiliser change de page  
-    func reportCurrentSectionDidChanged(manager: WPReportManager, section: Int) {
+    // appelé à chaque changement de page
+    func reportCurrentSectionDidChange(manager: WPReportManager, section: Int) {
         title = manager.sections[section]
     }
-    // appeler quand le rapport est fermer  
-    func reportClosed(manager _: WPReportManager) {
+
+    // appelé quand le rapport est fermé  
+    func reportDidClose(manager _: WPReportManager) {
         dismiss()
+    }
+
+    // appelé quand le rapport est signé
+    func reportDidSubmit(manager _: WPReportManager) {
     }
 }
 ```
@@ -222,7 +227,7 @@ extension CustomViewController: WPReportDownloaderDelegate {
     // permet de savoir si la page peremet d'importer depuis son part / profile
     // attention permet de voire tout le carnet d'adresse / parc de bien
     func reportCanShowSectionImport(downloader _: WPReportDownloader, section _: Int) -> Bool {
-        return false
+        return true
     }
 }
 ```
