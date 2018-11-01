@@ -18,8 +18,7 @@
   },
   "ios": {
     "vendored_frameworks": [
-      "WeProovSDK/WeProovSDK.framework",
-      "WeProovSDK/Wprv.framework"
+      "WeProovSDK/WeProovSDK.framework"
     ]
   },
   "pod_target_xcconfig": {

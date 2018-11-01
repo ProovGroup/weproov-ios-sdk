@@ -5,7 +5,16 @@
 import UIKit
 import WeProovSDK
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WPUserDelegate {
+    
+    func userDidConnect(user: WPUser){
+        print("WeProov Connected")
+    }
+    
+    /// Tells the delegate when the user failed to connect
+    func userFailedToConnect(user: WPUser, error: Error?){
+        print("WeProov Connect Error \(error!.localizedDescription)")
+    }
 
     private var downloader = WPReportDownloader()
     private let useCustomView = true
@@ -35,6 +44,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
     	super.viewDidLoad()
+        WPUser.shared.logout()
+        WPUser.shared.delegate = self
+        if !WPUser.shared.connected {
+            WPUser.shared.connect(token: "<TOKEN>", secret: "<SECRET>")
+        }
         openButton.addTarget(self, action: #selector(openReport), for: .touchUpInside)
     }
     

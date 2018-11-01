@@ -9,14 +9,17 @@ import WeProovSDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
 
+    
     private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        WPUser.shared.logout()
-        if !WPUser.shared.connected {
-            WPUser.shared.connect(token: "<API TOKEN >",
-                                  secret: "<API SECRETE>")
-        }
+
+//        if !WPUser.shared.connected {
+////            {"token": "CQolawEE/b//Oyo9HjKjUYVgLOM=", "secret": "cE1lZ214TWNocU9oS1NFdTYvdVV3Y01jOUxzPQ=="}
+//            WPUser.shared.connect(token: "CQolawEE/b//Oyo9HjKjUYVgLOM=",
+//                                  secret: "cE1lZ214TWNocU9oS1NFdTYvdVV3Y01jOUxzPQ==")
+//        }
         WPUser.shared.lang = "fr"
         WPReportUploader.shared.sync()
         WPLocationService.shared.startUpdateLocation()
