@@ -13,13 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-
-//        if !WPUser.shared.connected {
-////            {"token": "CQolawEE/b//Oyo9HjKjUYVgLOM=", "secret": "cE1lZ214TWNocU9oS1NFdTYvdVV3Y01jOUxzPQ=="}
-//            WPUser.shared.connect(token: "CQolawEE/b//Oyo9HjKjUYVgLOM=",
-//                                  secret: "cE1lZ214TWNocU9oS1NFdTYvdVV3Y01jOUxzPQ==")
-//        }
         WPUser.shared.lang = "fr"
         WPReportUploader.shared.sync()
         WPLocationService.shared.startUpdateLocation()
