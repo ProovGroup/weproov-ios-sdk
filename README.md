@@ -103,6 +103,17 @@ gerer l'evenement dans le ``AppDelegate``:
         completionHandler()
     }
 ```
+WPUserDelegate
+```
+    func userDidConnect(user: WPUser){
+        print("WeProov Connected")
+    }
+    
+    /// Tells the delegate when the user failed to connect
+    func userFailedToConnect(user: WPUser, error: Error?){
+        print("WeProov Connect Error \(error!.localizedDescription)")
+    }
+```
 
 ### Custom View 
 
