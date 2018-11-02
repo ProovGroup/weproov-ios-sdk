@@ -1,0 +1,45 @@
+PODS:
+  - ACEDrawingView (2.2.1)
+  - APAddressBook (0.3.2):
+    - APAddressBook/Core (= 0.3.2)
+  - APAddressBook/Core (0.3.2)
+  - FLAnimatedImage (1.0.12)
+  - JTMaterialSpinner (3.0.3)
+  - MBProgressHUD (1.1.0)
+  - SnapKit (4.0.1)
+  - WeProovSDK (1.0.2):
+    - ACEDrawingView (~> 2.2)
+    - APAddressBook (~> 0.3)
+    - FLAnimatedImage (~> 1.0)
+    - JTMaterialSpinner (~> 3.0)
+    - MBProgressHUD (~> 1.1)
+    - SnapKit (~> 4.0)
+
+DEPENDENCIES:
+  - WeProovSDK (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ACEDrawingView
+    - APAddressBook
+    - FLAnimatedImage
+    - JTMaterialSpinner
+    - MBProgressHUD
+    - SnapKit
+
+EXTERNAL SOURCES:
+  WeProovSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ACEDrawingView: fa6e8461682a54db3ac65151474fc77ef7e54fd2
+  APAddressBook: e68ecaf95f2c323b625ae585a0d25fe505291286
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  JTMaterialSpinner: 95e86472668c18f67f5d9395dfe15251d6894448
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  WeProovSDK: 300d912c03afafe97093a5c328ab8d1e9835ae3d
+
+PODFILE CHECKSUM: 61199451deac77215e025b0e5c428714dd0ebc4c
+
+COCOAPODS: 1.5.3
