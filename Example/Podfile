@@ -4,7 +4,7 @@ platform :ios, '10.0'
 
 target 'WeProovSDK_Example' do
     pod 'WeProovSDK', :path => '../'
-#     pod 'WeProovSDK', :git => 'git@github.com:ProovGroup/weproov-ios-sdk.git'
+	# pod 'WeProovSDK', :git => 'git@github.com:ProovGroup/weproov-ios-sdk.git'
 
 	target 'WeProovSDK_Tests' do
 		inherit! :search_paths
