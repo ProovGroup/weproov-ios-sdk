@@ -9,6 +9,7 @@
 @import Foundation;
 #include "Universe.objc.h"
 
+#include "Wperr.objc.h"
 
 @class TeamList;
 @class TeamStruct;
@@ -41,7 +42,7 @@
 - (void)setLimit:(long)v;
 - (BOOL)haveMore;
 - (void)setHaveMore:(BOOL)v;
-// skipped field List.Result with unsupported type: *types.Slice
+// skipped field List.Result with unsupported type: []bitbucket.org/weproov/weproovstrucgo/team.Struct
 
 - (long)count;
 - (TeamStruct*)get:(long)num;

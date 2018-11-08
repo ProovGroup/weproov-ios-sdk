@@ -1,6 +1,6 @@
 {
   "name": "WeProovSDK",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "summary": "A short description of WeProovSDK",
   "description": "A long description of WeProovSDK",
   "license": {
@@ -11,7 +11,7 @@
   "homepage": "https://github.com/ProovGroup/weproov-ios-sdk",
   "source": {
     "git": "https://github.com/ProovGroup/weproov-ios-sdk.git",
-    "tag": "1.0.3"
+    "tag": "1.0.4"
   },
   "platforms": {
     "ios": "10.0"
@@ -27,6 +27,7 @@
   "user_target_xcconfig": {
     "ENABLE_BITCODE": "NO"
   },
+  "preserve_paths": "WeProovSDK/Wprv.framework",
   "dependencies": {
     "ACEDrawingView": [
       "~> 2.2"

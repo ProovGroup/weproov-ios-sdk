@@ -7,7 +7,7 @@ PODS:
   - JTMaterialSpinner (3.0.3)
   - MBProgressHUD (1.1.0)
   - SnapKit (4.2.0)
-  - WeProovSDK (1.0.3):
+  - WeProovSDK (1.0.4):
     - ACEDrawingView (~> 2.2)
     - APAddressBook (~> 0.3)
     - FLAnimatedImage (~> 1.0)
@@ -38,7 +38,7 @@ SPEC CHECKSUMS:
   JTMaterialSpinner: 95e86472668c18f67f5d9395dfe15251d6894448
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  WeProovSDK: 9914732e47511eef2195d8815e44023ddb169c42
+  WeProovSDK: 938e14c22ca1147b3765e8e29f4dce9ff850e801
 
 PODFILE CHECKSUM: 8cb186038b7d2ef8b41fde155aa21f6586214a12
 
