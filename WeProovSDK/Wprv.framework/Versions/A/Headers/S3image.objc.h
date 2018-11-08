@@ -9,9 +9,6 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Config.objc.h"
-#include "Fscache.objc.h"
-#include "Wperr.objc.h"
 
 @class S3imageS3PictureDownload;
 @protocol S3imageDelegate;

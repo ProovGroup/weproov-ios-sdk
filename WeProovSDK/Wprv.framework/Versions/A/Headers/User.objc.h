@@ -10,14 +10,7 @@
 #include "Universe.objc.h"
 
 #include "Cachedimage.objc.h"
-#include "Category.objc.h"
-#include "Config.objc.h"
-#include "Fscache.objc.h"
-#include "Keyvalue.objc.h"
-#include "Rights.objc.h"
 #include "Translations.objc.h"
-#include "Utils.objc.h"
-#include "Wperr.objc.h"
 
 @class UserExtraInfos;
 @class UserStruct;
@@ -65,7 +58,7 @@
 - (void)setType:(NSString*)v;
 - (long)title;
 - (void)setTitle:(long)v;
-// skipped field ExtraInfos.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field ExtraInfos.Title_ with unsupported type: *types.Named
 
 @end
 
@@ -117,13 +110,13 @@
 - (void)setAccessToken:(NSString*)v;
 - (NSString*)company;
 - (void)setCompany:(NSString*)v;
-// skipped field Struct.Extra with unsupported type: []bitbucket.org/weproov/weproovstrucgo/user.ExtraInfos
+// skipped field Struct.Extra with unsupported type: *types.Slice
 
 - (NSString*)lang;
 - (void)setLang:(NSString*)v;
-// skipped field Struct.CreatedAt with unsupported type: time.Time
+// skipped field Struct.CreatedAt with unsupported type: *types.Named
 
-// skipped field Struct.UpdatedAt with unsupported type: time.Time
+// skipped field Struct.UpdatedAt with unsupported type: *types.Named
 
 - (void)changePassword:(NSString*)oldPassword newPassword:(NSString*)newPassword delegate:(id<UserDelegate>)delegate;
 - (void)downloadProfilPicture:(id<CachedimageDelegate>)delegate;
@@ -187,7 +180,7 @@
 @end
 
 @interface User : NSObject
-// skipped variable CurrentUser with unsupported type: bitbucket.org/weproov/weproovstrucgo/user.Struct
+// skipped variable CurrentUser with unsupported type: *types.Named
 
 @end
 
@@ -279,13 +272,7 @@ FOUNDATION_EXPORT BOOL UserUploadProfilPictureSync(NSString* data, NSError** err
 @property(strong, readonly) id _ref;
 
 - (instancetype)initWithRef:(id)ref;
-/**
- * 		OnUserError sera appeler lors d'une erreur quelquonque
- */
 - (void)onUserError:(NSError*)error;
-/**
- * 		appeler lors login / register ces bien passez et qu il n'est pas n'ecessaire de verifier le telephone
- */
 - (void)onUserSuccess:(UserStruct*)user;
 @end
 

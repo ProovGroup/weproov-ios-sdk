@@ -9,7 +9,6 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Wperr.objc.h"
 
 @class ProoverInfos;
 @class ProoverList;
@@ -48,7 +47,7 @@
 - (void)setLimit:(long)v;
 - (BOOL)haveMore;
 - (void)setHaveMore:(BOOL)v;
-// skipped field List.Result with unsupported type: []bitbucket.org/weproov/weproovstrucgo/proover.Struct
+// skipped field List.Result with unsupported type: *types.Slice
 
 - (long)count;
 - (ProoverStruct*)get:(long)num;
@@ -67,7 +66,7 @@
 - (void)setUserId:(long)v;
 - (NSString*)identifier;
 - (void)setIdentifier:(NSString*)v;
-// skipped field Struct.Infos with unsupported type: []bitbucket.org/weproov/weproovstrucgo/proover.Infos
+// skipped field Struct.Infos with unsupported type: *types.Slice
 
 - (NSString*)company;
 - (NSString*)email;

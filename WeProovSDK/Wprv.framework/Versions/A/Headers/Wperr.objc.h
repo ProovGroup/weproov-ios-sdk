@@ -42,7 +42,7 @@
 - (instancetype)init;
 - (long)status;
 - (void)setStatus:(long)v;
-// skipped field Wperrors.Errors with unsupported type: []bitbucket.org/weproov/weproovstrucgo/wperr.Wperror
+// skipped field Wperrors.Errors with unsupported type: *types.Slice
 
 - (long)timestamp;
 - (void)setTimestamp:(long)v;

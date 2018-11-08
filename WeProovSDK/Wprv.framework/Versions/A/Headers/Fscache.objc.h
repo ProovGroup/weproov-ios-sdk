@@ -9,7 +9,6 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Utils.objc.h"
 
 @class FscacheCache;
 
