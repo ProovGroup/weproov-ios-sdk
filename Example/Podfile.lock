@@ -16,7 +16,7 @@ PODS:
     - SnapKit (~> 4.0)
 
 DEPENDENCIES:
-  - "WeProovSDK (from `git@github.com:ProovGroup/weproov-ios-sdk.git`)"
+  - WeProovSDK (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -29,12 +29,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   WeProovSDK:
-    :git: "git@github.com:ProovGroup/weproov-ios-sdk.git"
-
-CHECKOUT OPTIONS:
-  WeProovSDK:
-    :commit: ace0d208f0b24aa9cc9f7e3512dde966c8a91f72
-    :git: "git@github.com:ProovGroup/weproov-ios-sdk.git"
+    :path: "../"
 
 SPEC CHECKSUMS:
   ACEDrawingView: fa6e8461682a54db3ac65151474fc77ef7e54fd2
@@ -43,8 +38,8 @@ SPEC CHECKSUMS:
   JTMaterialSpinner: 95e86472668c18f67f5d9395dfe15251d6894448
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  WeProovSDK: fc446cf121aa6181c8782e3040695eb51c04593b
+  WeProovSDK: 938e14c22ca1147b3765e8e29f4dce9ff850e801
 
-PODFILE CHECKSUM: 3d072f5d2b34359cf9b5fca1fa22b6d9236fb3ea
+PODFILE CHECKSUM: 8cb186038b7d2ef8b41fde155aa21f6586214a12
 
 COCOAPODS: 1.5.3

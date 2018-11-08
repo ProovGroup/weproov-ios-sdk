@@ -18,8 +18,7 @@
   },
   "ios": {
     "vendored_frameworks": [
-      "WeProovSDK/WeProovSDK.framework",
-      "WeProovSDK/Wprv.framework"
+      "WeProovSDK/WeProovSDK.framework"
     ]
   },
   "pod_target_xcconfig": {
@@ -28,6 +27,7 @@
   "user_target_xcconfig": {
     "ENABLE_BITCODE": "NO"
   },
+  "preserve_paths": "WeProovSDK/Wprv.framework",
   "dependencies": {
     "ACEDrawingView": [
       "~> 2.2"
