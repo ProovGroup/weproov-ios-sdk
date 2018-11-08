@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WeProovSDK'
-  s.version          = '1.0.2'
+  s.version          = '1.0.4'
   s.summary          = 'A short description of WeProovSDK'
   s.description      = 'A long description of WeProovSDK'
   s.license          = { :type => 'ProovGroup License', :file => 'LICENSE' }
@@ -8,8 +8,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/ProovGroup/weproov-ios-sdk'
   s.source           = { :git => 'https://github.com/ProovGroup/weproov-ios-sdk.git', :tag => s.version.to_s }
   s.ios.deployment_target = '10.0'
-  s.ios.vendored_frameworks = ['WeProovSDK/WeProovSDK.framework']
-  s.public_header_files = 'WeProovSDK/Wprv.framework/Headers/*'
+  s.ios.vendored_frameworks = ['WeProovSDK/WeProovSDK.framework', 'WeProovSDK/Wprv.framework']
   s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' } # because of `WeProovWprv`
   s.user_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' } # because of `WeProovWprv`
 
