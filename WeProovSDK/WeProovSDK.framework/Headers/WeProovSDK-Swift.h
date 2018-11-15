@@ -276,6 +276,9 @@ SWIFT_CLASS("_TtC10WeProovSDK12WPReportView")
 
 SWIFT_CLASS("_TtC10WeProovSDK22WPReportViewController")
 @interface WPReportViewController : WPVC
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER;
 - (void)loadView;
 - (void)viewDidLoad;
