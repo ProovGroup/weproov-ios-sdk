@@ -10,10 +10,8 @@
 #include "Universe.objc.h"
 
 #include "Cachedimage.objc.h"
-#include "Keyvalue.objc.h"
 #include "Templates.objc.h"
 #include "Translations.objc.h"
-#include "Wperr.objc.h"
 
 @class CategoryStruct;
 @protocol CategoryCallback;
@@ -71,7 +69,7 @@
  */
 - (long)cachedId;
 - (void)setCachedId:(long)v;
-// skipped field Struct.TitleTr with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Struct.TitleTr with unsupported type: *types.Named
 
 /**
  * 		ParentId correspond a l'id de l'object parent
@@ -81,9 +79,9 @@
  */
 - (long)parentId;
 - (void)setParentId:(long)v;
-// skipped field Struct.Subcategory with unsupported type: []bitbucket.org/weproov/weproovstrucgo/category.Struct
+// skipped field Struct.Subcategory with unsupported type: *types.Slice
 
-// skipped field Struct.TemplateIds with unsupported type: []bitbucket.org/weproov/weproovstrucgo/templates.Template
+// skipped field Struct.TemplateIds with unsupported type: *types.Slice
 
 /**
  * True if the contents of the items are the same or false if they are different.
@@ -127,7 +125,7 @@
 FOUNDATION_EXPORT NSString* const CategoryCURRENT_TEMPLATE_LIST_KEY;
 
 @interface Category : NSObject
-// skipped variable Cats with unsupported type: []bitbucket.org/weproov/weproovstrucgo/category.Struct
+// skipped variable Cats with unsupported type: *types.Slice
 
 @end
 

@@ -23,7 +23,7 @@ framework module "Wprv" {
     header "Pack.objc.h"
     header "Team.objc.h"
     header "Rn.objc.h"
-    header "universe.objc.h"
+    header "Universe.objc.h"
     header "Wprv.h"
 
     export *

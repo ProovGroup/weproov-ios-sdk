@@ -9,23 +9,39 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Translations.objc.h"
-#include "Wperr.objc.h"
-#include "S3image.objc.h"
 #include "Geoloc.objc.h"
 #include "Pulldownload.objc.h"
+#include "S3image.objc.h"
+#include "Translations.objc.h"
 
 @class ItemsChecklist;
+@class ItemsFormItemStruct;
+@class ItemsFormStruct;
 @class ItemsInfo;
+@class ItemsInfosParameters;
 @class ItemsList;
 @class ItemsProcess;
 @class ItemsProcessInfos;
 @class ItemsStruct;
 @class ItemsSupport;
+@protocol ItemsFormGetDelegate;
+@class ItemsFormGetDelegate;
+@protocol ItemsFormPostDelegate;
+@class ItemsFormPostDelegate;
 @protocol ItemsFullDelegate;
 @class ItemsFullDelegate;
 @protocol ItemsListDelegate;
 @class ItemsListDelegate;
+
+@protocol ItemsFormGetDelegate <NSObject>
+- (void)formGetError:(NSError*)err;
+- (void)formGetSuccess:(ItemsFormStruct*)form;
+@end
+
+@protocol ItemsFormPostDelegate <NSObject>
+- (void)formPostError:(NSError*)err;
+- (void)formPostSuccess;
+@end
 
 @protocol ItemsFullDelegate <NSObject>
 - (void)onFullError:(NSError*)err;
@@ -55,12 +71,58 @@
 - (void)setItemsId:(long)v;
 - (long)title;
 - (void)setTitle:(long)v;
-// skipped field Checklist.CreatedAt with unsupported type: time.Time
+// skipped field Checklist.CreatedAt with unsupported type: *types.Named
 
-// skipped field Checklist.UpdatedAt with unsupported type: time.Time
+// skipped field Checklist.UpdatedAt with unsupported type: *types.Named
 
-// skipped field Checklist.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Checklist.Title_ with unsupported type: *types.Named
 
+@end
+
+@interface ItemsFormItemStruct : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) id _ref;
+
+- (instancetype)initWithRef:(id)ref;
+- (instancetype)init;
+- (long)id_;
+- (void)setId:(long)v;
+// skipped field FormItemStruct.CreatedAt with unsupported type: *types.Named
+
+// skipped field FormItemStruct.UpdatedAt with unsupported type: *types.Named
+
+- (long)title;
+- (void)setTitle:(long)v;
+// skipped field FormItemStruct.Title_ with unsupported type: *types.Named
+
+- (NSString*)name;
+- (void)setName:(NSString*)v;
+- (NSString*)type;
+- (void)setType:(NSString*)v;
+- (NSString*)value;
+- (void)setValue:(NSString*)v;
+- (long)itemsId;
+- (void)setItemsId:(long)v;
+// skipped field FormItemStruct.Parameters with unsupported type: *types.Named
+
+- (ItemsInfosParameters*)getParams;
+- (NSString*)getTr;
+@end
+
+@interface ItemsFormStruct : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) id _ref;
+
+- (instancetype)initWithRef:(id)ref;
+- (instancetype)init;
+// skipped field FormStruct.FormItems with unsupported type: *types.Slice
+
+- (long)categoryId;
+- (void)setCategoryId:(long)v;
+- (long)formItemsCount;
+- (ItemsFormItemStruct*)formItemsGet:(long)index;
+- (void)post:(id<ItemsFormPostDelegate>)delegate;
+- (BOOL)postSync:(NSError**)error;
 @end
 
 @interface ItemsInfo : NSObject <goSeqRefInterface> {
@@ -81,13 +143,29 @@
 - (void)setItemsId:(long)v;
 - (long)title;
 - (void)setTitle:(long)v;
-// skipped field Info.CreatedAt with unsupported type: time.Time
+// skipped field Info.CreatedAt with unsupported type: *types.Named
 
-// skipped field Info.UpdatedAt with unsupported type: time.Time
+// skipped field Info.UpdatedAt with unsupported type: *types.Named
 
-// skipped field Info.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Info.Title_ with unsupported type: *types.Named
 
 - (NSString*)getFormatedRow;
+@end
+
+@interface ItemsInfosParameters : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) id _ref;
+
+- (instancetype)initWithRef:(id)ref;
+- (instancetype)init;
+// skipped field InfosParameters.List with unsupported type: *types.Slice
+
+// skipped field InfosParameters.List_ with unsupported type: *types.Slice
+
+- (long)getListIdByPosition:(NSString*)tr;
+- (long)getListPosition:(long)pose;
+- (NSString*)getListTr:(long)id_;
+- (long)listCount;
 @end
 
 @interface ItemsList : NSObject <goSeqRefInterface> {
@@ -104,7 +182,7 @@
 - (void)setLimit:(long)v;
 - (BOOL)haveMore;
 - (void)setHaveMore:(BOOL)v;
-// skipped field List.Result with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.Struct
+// skipped field List.Result with unsupported type: *types.Slice
 
 - (long)count;
 - (ItemsStruct*)get:(long)num;
@@ -123,9 +201,9 @@
 - (void)setName:(NSString*)v;
 - (long)s3pictureId;
 - (void)setS3pictureId:(long)v;
-// skipped field Process.Picture_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/items.s3picture
+// skipped field Process.Picture_ with unsupported type: *types.Named
 
-// skipped field Process.Infos with unsupported type: interface{}
+// skipped field Process.Infos with unsupported type: *types.Interface
 
 - (NSString*)type;
 - (void)setType:(NSString*)v;
@@ -133,11 +211,11 @@
 - (void)setItemsId:(long)v;
 - (long)title;
 - (void)setTitle:(long)v;
-// skipped field Process.CreatedAt with unsupported type: time.Time
+// skipped field Process.CreatedAt with unsupported type: *types.Named
 
-// skipped field Process.UpdatedAt with unsupported type: time.Time
+// skipped field Process.UpdatedAt with unsupported type: *types.Named
 
-// skipped field Process.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Process.Title_ with unsupported type: *types.Named
 
 - (NSData*)getData;
 @end
@@ -186,27 +264,27 @@
 - (void)setTitle:(long)v;
 - (long)ownerId;
 - (void)setOwnerId:(long)v;
-// skipped field Struct.Geoloc with unsupported type: bitbucket.org/weproov/weproovstrucgo/geoloc.Struct
+// skipped field Struct.Geoloc with unsupported type: *types.Named
 
 - (long)categoryId;
 - (void)setCategoryId:(long)v;
 - (long)s3pictureId;
 - (void)setS3pictureId:(long)v;
-// skipped field Struct.CreatedAt with unsupported type: time.Time
+// skipped field Struct.CreatedAt with unsupported type: *types.Named
 
-// skipped field Struct.UpdatedAt with unsupported type: time.Time
+// skipped field Struct.UpdatedAt with unsupported type: *types.Named
 
-// skipped field Struct.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Struct.Title_ with unsupported type: *types.Named
 
-// skipped field Struct.Preview with unsupported type: bitbucket.org/weproov/weproovstrucgo/items.s3picture
+// skipped field Struct.Preview with unsupported type: *types.Named
 
-// skipped field Struct.Infos with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.Info
+// skipped field Struct.Infos with unsupported type: *types.Slice
 
-// skipped field Struct.Checklists with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.Checklist
+// skipped field Struct.Checklists with unsupported type: *types.Slice
 
-// skipped field Struct.Supports with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.Support
+// skipped field Struct.Supports with unsupported type: *types.Slice
 
-// skipped field Struct.Process with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.Process
+// skipped field Struct.Process with unsupported type: *types.Slice
 
 /**
  * 	renvoy la version downloadable
@@ -266,7 +344,7 @@
 - (void)setName:(NSString*)v;
 - (long)s3pictureId;
 - (void)setS3pictureId:(long)v;
-// skipped field Support.Picture_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/items.s3picture
+// skipped field Support.Picture_ with unsupported type: *types.Named
 
 - (NSString*)type;
 - (void)setType:(NSString*)v;
@@ -274,22 +352,48 @@
 - (void)setItemsId:(long)v;
 - (long)title;
 - (void)setTitle:(long)v;
-// skipped field Support.CreatedAt with unsupported type: time.Time
+// skipped field Support.CreatedAt with unsupported type: *types.Named
 
-// skipped field Support.UpdatedAt with unsupported type: time.Time
+// skipped field Support.UpdatedAt with unsupported type: *types.Named
 
-// skipped field Support.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Support.Title_ with unsupported type: *types.Named
 
 - (NSData*)getData;
 @end
+
+FOUNDATION_EXPORT void ItemsFormGet(NSString* formType, id<ItemsFormGetDelegate> delegate);
+
+FOUNDATION_EXPORT ItemsFormStruct* ItemsFormGetSync(NSString* formType, NSError** error);
 
 FOUNDATION_EXPORT void ItemsGetList(NSString* find, long offset, long limit, id<ItemsListDelegate> delegate);
 
 FOUNDATION_EXPORT ItemsList* ItemsGetListSync(NSString* find, long offset, long limit, NSError** error);
 
+@class ItemsFormGetDelegate;
+
+@class ItemsFormPostDelegate;
+
 @class ItemsFullDelegate;
 
 @class ItemsListDelegate;
+
+@interface ItemsFormGetDelegate : NSObject <goSeqRefInterface, ItemsFormGetDelegate> {
+}
+@property(strong, readonly) id _ref;
+
+- (instancetype)initWithRef:(id)ref;
+- (void)formGetError:(NSError*)err;
+- (void)formGetSuccess:(ItemsFormStruct*)form;
+@end
+
+@interface ItemsFormPostDelegate : NSObject <goSeqRefInterface, ItemsFormPostDelegate> {
+}
+@property(strong, readonly) id _ref;
+
+- (instancetype)initWithRef:(id)ref;
+- (void)formPostError:(NSError*)err;
+- (void)formPostSuccess;
+@end
 
 @interface ItemsFullDelegate : NSObject <goSeqRefInterface, ItemsFullDelegate> {
 }

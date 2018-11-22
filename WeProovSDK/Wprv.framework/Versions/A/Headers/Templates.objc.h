@@ -9,9 +9,7 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Fscache.objc.h"
 #include "Translations.objc.h"
-#include "Wperr.objc.h"
 
 @class TemplatesTemplate;
 @protocol TemplatesTemplateDelegate;
@@ -56,9 +54,9 @@
 - (void)setPdfHeaderTextColor:(NSString*)v;
 - (long)owner;
 - (void)setOwner:(long)v;
-// skipped field Template.TitleTr with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Template.TitleTr with unsupported type: *types.Named
 
-// skipped field Template.DescriptionTr with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Template.DescriptionTr with unsupported type: *types.Named
 
 - (NSString*)getDescriptionTr;
 - (void)getFullJsonString:(BOOL)forceRefresh delegate:(id<TemplatesTemplateDelegate>)delegate;
