@@ -36,6 +36,16 @@
 - (void)setIt:(NSString*)v;
 - (NSString*)pt;
 - (void)setPt:(NSString*)v;
+- (NSString*)ro;
+- (void)setRo:(NSString*)v;
+- (NSString*)sv;
+- (void)setSv:(NSString*)v;
+- (NSString*)tr;
+- (void)setTr:(NSString*)v;
+- (NSString*)cs;
+- (void)setCs:(NSString*)v;
+- (NSString*)sl;
+- (void)setSl:(NSString*)v;
 - (NSString*)getLang:(NSString*)lang;
 - (NSString*)getLocal;
 @end
