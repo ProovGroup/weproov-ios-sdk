@@ -165,6 +165,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_feature(modules)
 @import CoreGraphics;
 @import CoreLocation;
+@import Foundation;
 @import ObjectiveC;
 @import UIKit;
 @import Wprv;
@@ -206,10 +207,36 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS("_TtC10WeProovSDK17WPLocationService")
 @interface WPLocationService : NSObject <CLLocationManagerDelegate>
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) WPLocationService * _Nonnull shared;)
++ (WPLocationService * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
+@property (nonatomic, readonly, strong) CLLocation * _Nullable lastLocation;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// start to update location if authorized else ask for authorization
+- (void)startUpdateLocation;
+- (void)startUpdateLocationIfAuthorized;
+- (void)stopUpdateLocation;
 - (void)locationManager:(CLLocationManager * _Nonnull)_ didChangeAuthorizationStatus:(CLAuthorizationStatus)_;
 - (void)locationManager:(CLLocationManager * _Nonnull)_ didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
 @end
+
+enum ReportState : NSInteger;
+
+SWIFT_CLASS("_TtC10WeProovSDK8WPReport")
+@interface WPReport : NSObject
+@property (nonatomic, readonly) BOOL haveDropoff;
+@property (nonatomic, readonly, copy) NSDate * _Nullable pendingFirstFinishedAt;
+@property (nonatomic, readonly, copy) NSDate * _Nullable pendingSecondFinishedAt;
+- (enum ReportState)state SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, ReportState, closed) {
+  ReportStatePendingFirst = 0,
+  ReportStatePendingSecond = 1,
+  ReportStateFinished = 2,
+};
 
 @class NSBundle;
 @class NSCoder;
@@ -220,18 +247,34 @@ SWIFT_CLASS("_TtC10WeProovSDK4WPVC")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@protocol WPReportDownloadViewControllerDelegate;
 
 SWIFT_CLASS("_TtC10WeProovSDK30WPReportDownloadViewController")
 @interface WPReportDownloadViewController : WPVC
+@property (nonatomic, weak) id <WPReportDownloadViewControllerDelegate> _Nullable delegate;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)loadView;
 - (void)viewWillDisappear:(BOOL)animated;
+- (void)updateProgressionWithValue:(float)value;
 @end
 
 
+SWIFT_PROTOCOL("_TtP10WeProovSDK38WPReportDownloadViewControllerDelegate_")
+@protocol WPReportDownloadViewControllerDelegate
+/// Tell the delegate the user touch the cancel button
+- (void)reportCancelDownload;
+@end
+
+@protocol WPReportDownloaderDelegate;
+
 SWIFT_CLASS("_TtC10WeProovSDK18WPReportDownloader")
 @interface WPReportDownloader : NSObject
+@property (nonatomic, weak) id <WPReportDownloaderDelegate> _Nullable delegate;
+- (void)loadWithProovCode:(NSString * _Nonnull)proovCode;
+- (void)loadWithTemplateId:(NSInteger)templateId;
+- (void)loadReportInCache;
+- (BOOL)haveReportInCache SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -245,8 +288,40 @@ SWIFT_CLASS("_TtC10WeProovSDK18WPReportDownloader")
 
 
 
+SWIFT_PROTOCOL("_TtP10WeProovSDK26WPReportDownloaderDelegate_")
+@protocol WPReportDownloaderDelegate
+/// Tells the delegate when the manager has to download additionnal data
+- (void)reportLoadingWithDownloader:(WPReportDownloader * _Nonnull)downloader;
+/// Tells the delegate the progression of the download of  additionnal data
+- (void)reportLoadingProgressWithDownloader:(WPReportDownloader * _Nonnull)downloader progress:(float)progress;
+/// Tells the delegate when the manager has successfully loaded the report
+- (void)reportDidLoadWithDownloader:(WPReportDownloader * _Nonnull)downloader report:(WPReport * _Nonnull)report;
+/// Tells the delegate when the manager has failed to load the report
+- (void)reportFailedToLoadWithDownloader:(WPReportDownloader * _Nonnull)downloader error:(NSError * _Nullable)error;
+/// Asks the delegate if should hide a section
+- (BOOL)reportCanShowSectionWithDownloader:(WPReportDownloader * _Nonnull)downloader section:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+/// Asks the delegate if should hide import buttons in a section
+- (BOOL)reportCanShowSectionImportWithDownloader:(WPReportDownloader * _Nonnull)downloader section:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@protocol WPReportManagerDelegate;
+@class WPTheme;
+@class WPReportView;
+
 SWIFT_CLASS("_TtC10WeProovSDK15WPReportManager")
 @interface WPReportManager : NSObject
+@property (nonatomic, weak) id <WPReportManagerDelegate> _Nullable delegate;
+@property (nonatomic, readonly, strong) WPReport * _Nonnull report;
+@property (nonatomic) NSInteger currentSectionIndex;
+/// Number of visible sections
+@property (nonatomic, readonly) NSInteger numberOfSections;
+/// Names of visible sections
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull sections;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+- (nonnull instancetype)initWithController:(UIViewController * _Nonnull)controller report:(WPReport * _Nonnull)report theme:(WPTheme * _Nullable)theme OBJC_DESIGNATED_INITIALIZER;
+- (void)loadWithReportView:(WPReportView * _Nonnull)reportView;
 /// Close without saving
 - (void)closeReport;
 - (NSError * _Nullable)saveAndCloseReport SWIFT_WARN_UNUSED_RESULT;
@@ -267,18 +342,57 @@ SWIFT_CLASS("_TtC10WeProovSDK15WPReportManager")
 @end
 
 
+SWIFT_PROTOCOL("_TtP10WeProovSDK23WPReportManagerDelegate_")
+@protocol WPReportManagerDelegate
+/// Tells the delegate when the current section changed
+- (void)reportCurrentSectionDidChangeWithManager:(WPReportManager * _Nonnull)manager section:(NSInteger)section;
+/// Tells the delegate when the report is closed
+- (void)reportDidCloseWithManager:(WPReportManager * _Nonnull)manager;
+/// Tells the delegate when the report is submitted, always called before <code>reportClosed</code>
+- (void)reportDidSubmitWithManager:(WPReportManager * _Nonnull)manager;
+@end
+
+@protocol WPReportUploaderDelegate;
+
+SWIFT_CLASS("_TtC10WeProovSDK16WPReportUploader")
+@interface WPReportUploader : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) WPReportUploader * _Nonnull shared;)
++ (WPReportUploader * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, weak) id <WPReportUploaderDelegate> _Nullable delegate;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+/// Call this method to start uploading reports in background
+- (void)sync;
+/// Must be call by <code>handleEventsForBackgroundURLSession</code> in <code>AppDelegate</code>
+/// return <code>true</code> if handled by <code>WPReportUploader</code>
+- (BOOL)handleEventsForBackgroundURLSessionWithIdentifier:(NSString * _Nonnull)identifier completionHandler:(void (^ _Nonnull)(void))completionHandler SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_PROTOCOL("_TtP10WeProovSDK24WPReportUploaderDelegate_")
+@protocol WPReportUploaderDelegate
+- (void)reportUploaderUploadAddedWithIdentifier:(NSString * _Nonnull)identifier;
+/// progress of the upload, value between 0.0 and 1.0
+- (void)reportUploaderUploadUpdatedWithIdentifier:(NSString * _Nonnull)identifier progress:(float)progress;
+- (void)reportUploaderUploadFinishedWithIdentifier:(NSString * _Nonnull)identifier;
+@end
+
+
 SWIFT_CLASS("_TtC10WeProovSDK12WPReportView")
 @interface WPReportView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@protocol WPReportViewControllerDelegate;
 
 SWIFT_CLASS("_TtC10WeProovSDK22WPReportViewController")
 @interface WPReportViewController : WPVC
+@property (nonatomic, weak) id <WPReportViewControllerDelegate> _Nullable delegate;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
+- (nonnull instancetype)initWithReport:(WPReport * _Nonnull)report theme:(WPTheme * _Nullable)theme OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER;
 - (void)loadView;
 - (void)viewDidLoad;
@@ -290,17 +404,196 @@ SWIFT_CLASS("_TtC10WeProovSDK22WPReportViewController")
 
 
 
+@interface WPReportViewController (SWIFT_EXTENSION(WeProovSDK)) <WPReportManagerDelegate>
+- (void)reportCurrentSectionDidChangeWithManager:(WPReportManager * _Nonnull)manager section:(NSInteger)section;
+- (void)reportDidCloseWithManager:(WPReportManager * _Nonnull)_;
+- (void)reportDidSubmitWithManager:(WPReportManager * _Nonnull)_;
+@end
 
+
+SWIFT_PROTOCOL("_TtP10WeProovSDK30WPReportViewControllerDelegate_")
+@protocol WPReportViewControllerDelegate
+/// Tell the delegate the controller is dismissed and if the report was submitted
+- (void)reportViewControllerDidDismissWithSubmitted:(BOOL)submitted;
+@end
+
+@class UINavigationController;
+
+SWIFT_CLASS("_TtC10WeProovSDK7WPTheme")
+@interface WPTheme : NSObject
+@property (nonatomic, strong) UIColor * _Nonnull reportInitialColor;
+@property (nonatomic, strong) UIColor * _Nonnull reportFinalColor;
+@property (nonatomic, strong) UIColor * _Nonnull reportArchivedColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerBorderColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerItemIndexColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerItemIndexBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull headerItemIndexFont;
+@property (nonatomic, strong) UIColor * _Nonnull headerItemErrorColor;
+@property (nonatomic, strong) UIColor * _Nonnull headerItemErrorBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull headerItemErrorFont;
+@property (nonatomic, strong) UIColor * _Nonnull sectionHeaderDateTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull sectionHeaderDateFont;
+@property (nonatomic, strong) UIColor * _Nonnull sectionHeaderInfoTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull sectionHeaderInfoFont;
+@property (nonatomic, strong) UIColor * _Nonnull sectionHeaderImportTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull sectionHeaderImportFont;
+@property (nonatomic, strong) UIColor * _Nonnull sectionBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldSetBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldSetTitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull fieldSetTitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull fieldSetSubtitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull fieldSetSubtitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull fieldSetLegendColor;
+@property (nonatomic, strong) UIFont * _Nonnull fieldSetLegendFont;
+@property (nonatomic, strong) UIColor * _Nonnull fieldSetBorderColor;
+@property (nonatomic, strong) UIFont * _Nonnull fieldInitialValueFont;
+@property (nonatomic, strong) UIColor * _Nonnull fieldInitialValueColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldInitialValueDifferenceColor;
+@property (nonatomic, strong) UIFont * _Nonnull fieldLabelFont;
+@property (nonatomic, strong) UIColor * _Nonnull fieldLabelDefaultColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldLabelErrorColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldBorderDefaultColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldBorderErrorColor;
+@property (nonatomic, strong) UIFont * _Nonnull fieldPlaceholderAndValueFont;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPlaceholderColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldValueDefaultColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldValueErrorColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldValueEmptyColor;
+@property (nonatomic, strong) UIFont * _Nonnull fieldNumericValueFont;
+@property (nonatomic, strong) UIColor * _Nonnull fieldNumericValueColor;
+@property (nonatomic, strong) UIFont * _Nonnull fieldSwitchValueFont;
+@property (nonatomic, strong) UIColor * _Nonnull fieldSwitchValueColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldSwitchOffColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldSwitchOnColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoContainerBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoContainerBorderColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoContainerBorderValidColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoContainerBorderErrorColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoPlaceholderColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoValidColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull fieldPhotoTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoStartTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull fieldPhotoStartTextFont;
+@property (nonatomic, strong) UIFont * _Nonnull fieldPhotoAddTextFont;
+@property (nonatomic, strong) UIFont * _Nonnull fieldPhotoAnnotationFont;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoAnnotationTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull fieldPhotoAnnotationBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull navigationBarBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull navigationBarTitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull navigationBarTitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull navigationBarItemsFont;
+@property (nonatomic, strong) UIFont * _Nonnull summaryLabelFont;
+@property (nonatomic, strong) UIColor * _Nonnull listBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull listTitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull listTitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull listCloseFont;
+@property (nonatomic, strong) UIColor * _Nonnull listCloseColor;
+@property (nonatomic, strong) UIColor * _Nonnull listSeparatorColor;
+@property (nonatomic, strong) UIFont * _Nonnull listCellFont;
+@property (nonatomic, strong) UIColor * _Nonnull listCellColor;
+@property (nonatomic, strong) UIColor * _Nonnull listCellSelectedBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull listSearchFont;
+@property (nonatomic, strong) UIColor * _Nonnull listSearchColor;
+@property (nonatomic, strong) UIColor * _Nonnull listSearchBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull signatureBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull signatureHeaderSectionFont;
+@property (nonatomic, strong) UIColor * _Nonnull signatureHeaderSectionColor;
+@property (nonatomic, strong) UIFont * _Nonnull signatureHeaderInfoFont;
+@property (nonatomic, strong) UIColor * _Nonnull signatureHeaderInfoColor;
+@property (nonatomic, strong) UIFont * _Nonnull signatureFooterFont;
+@property (nonatomic, strong) UIColor * _Nonnull signatureFooterBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull signatureFooterColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraHeaderTintColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraFooterButtonFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraFooterButtonColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraFooterImageStateFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraFooterButtonCloseColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraFooterButtonCloseFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraFooterButtonCloseBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraContentLabelFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraContentLabelColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraContentLabelSeparatorColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraContentLabelBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraContentLabelValidBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraContentLabelErrorBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraContentLabelStateFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraContentLabelStateColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraContentModalBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraContentModalFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraContentModalTextColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraContentModalTextSecondaryColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorHeaderTextColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraAnnotationEditorHeaderTextFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorHeaderAnnotationBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorHeaderAnnotationColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraAnnotationEditorHeaderAnnotationFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorContentBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorContentBorderColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraAnnotationEditorContentFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorContentColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorContentPlaceholderColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorFooterDeleteColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorFooterButtonColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraAnnotationEditorFooterButtonFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorFooterButtonSaveBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationEditorFooterButtonSaveColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraAnnotationEditorFooterButtonSaveFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraPopupBackgroundColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraPopupTitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraPopupTitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraPopupContentColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraPopupContentFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationsMenuItemIndexColor;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationsMenuItemIndexBackgroundColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraAnnotationsMenuItemIndexFont;
+@property (nonatomic, strong) UIFont * _Nonnull cameraAnnotationsMenuItemTitleFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationsMenuItemTitleColor;
+@property (nonatomic, strong) UIFont * _Nonnull cameraAnnotationsMenuItemContentFont;
+@property (nonatomic, strong) UIColor * _Nonnull cameraAnnotationsMenuItemContentColor;
+/// Text display on the signature page
+@property (nonatomic, copy) NSString * _Nullable termsOfService;
+/// URL to terms of service, if nil then WeProov’s will be used
+@property (nonatomic, copy) NSURL * _Nonnull termsOfServiceURL;
+/// URL to privacy, if nil then WeProov’s will be used
+@property (nonatomic, copy) NSURL * _Nonnull privacyURL;
+/// Use to customize the <code>UINavigationController</code>
+@property (nonatomic) SWIFT_METATYPE(UINavigationController) _Nullable navigationVCType;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@protocol WPUserDelegate;
 @class UserStruct;
 
 SWIFT_CLASS("_TtC10WeProovSDK6WPUser")
 @interface WPUser : NSObject <UserDelegate>
+@property (nonatomic, weak) id <WPUserDelegate> _Nullable delegate;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) WPUser * _Nonnull shared;)
++ (WPUser * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
++ (void)setShared:(WPUser * _Nonnull)value;
+@property (nonatomic, readonly) BOOL connected;
+@property (nonatomic, copy) NSString * _Nonnull lang;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+- (void)connectWithToken:(NSString * _Nonnull)token secret:(NSString * _Nonnull)secret;
+- (void)logout;
 /// Internal usage
 - (void)onUserError:(NSError * _Nullable)e;
 /// Internal usage
 - (void)onUserSuccess:(UserStruct * _Null_unspecified)_;
+@end
+
+
+SWIFT_PROTOCOL("_TtP10WeProovSDK14WPUserDelegate_")
+@protocol WPUserDelegate
+/// Tells the delegate when the user is connected
+- (void)userDidConnectWithUser:(WPUser * _Nonnull)user;
+/// Tells the delegate when the user failed to connect
+- (void)userFailedToConnectWithUser:(WPUser * _Nonnull)user error:(NSError * _Nullable)error;
 @end
 
 
