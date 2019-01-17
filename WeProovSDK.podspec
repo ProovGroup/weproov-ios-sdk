@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WeProovSDK'
-  s.version          = '1.0.10'
+  s.version          = '1.0.11'
   s.summary          = 'A short description of WeProovSDK'
   s.description      = 'A long description of WeProovSDK'
   s.license          = { :type => 'ProovGroup License', :file => 'LICENSE' }
@@ -14,7 +14,6 @@ Pod::Spec.new do |s|
   s.preserve_paths = 'WeProovSDK/Wprv.framework'
   # s.dependency 'WeProovWprv'
   s.dependency 'ACEDrawingView', '~> 2.2'
-  s.dependency 'APAddressBook', '~> 0.3'
   s.dependency 'FLAnimatedImage', '~> 1.0'
   s.dependency 'JTMaterialSpinner', '~> 3.0'
   s.dependency 'MBProgressHUD', '~> 1.1'
