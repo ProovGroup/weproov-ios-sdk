@@ -9,6 +9,7 @@
 @import Foundation;
 #include "Universe.objc.h"
 
+#include "Config.objc.h"
 
 @class TranslationsTranslation;
 

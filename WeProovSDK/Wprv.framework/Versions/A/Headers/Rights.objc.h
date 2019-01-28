@@ -9,6 +9,8 @@
 @import Foundation;
 #include "Universe.objc.h"
 
+#include "Keyvalue.objc.h"
+#include "Wperr.objc.h"
 
 @class RightsMsgInApp;
 @class RightsOption;
@@ -58,7 +60,7 @@
 - (void)setId:(long)v;
 - (long)userId;
 - (void)setUserId:(long)v;
-// skipped field Option.Credit with unsupported type: *types.Pointer
+// skipped field Option.Credit with unsupported type: *int
 
 - (long)used;
 - (void)setUsed:(long)v;
@@ -70,7 +72,7 @@
 - (void)setBoolean:(BOOL)v;
 - (BOOL)disable;
 - (void)setDisable:(BOOL)v;
-// skipped field Option.SubsciptionId with unsupported type: *types.Pointer
+// skipped field Option.SubsciptionId with unsupported type: *int
 
 @end
 
@@ -115,7 +117,7 @@
  */
 - (long)subscriptionId;
 - (void)setSubscriptionId:(long)v;
-// skipped field Struct.Credits with unsupported type: *types.Named
+// skipped field Struct.Credits with unsupported type: bitbucket.org/weproov/weproovstrucgo/rights.Options
 
 /**
  * 		Permet de bloquer l'utilisateur
@@ -133,7 +135,7 @@
  */
 - (BOOL)accessTest;
 - (void)setAccessTest:(BOOL)v;
-// skipped field Struct.Subscription with unsupported type: *types.Named
+// skipped field Struct.Subscription with unsupported type: bitbucket.org/weproov/weproovstrucgo/rights.Subscription
 
 - (long)getDayEndTrial;
 - (long)getFullCredits;
@@ -181,13 +183,13 @@
 - (void)setName:(NSString*)v;
 - (long)userId;
 - (void)setUserId:(long)v;
-// skipped field Subscription.Start with unsupported type: *types.Named
+// skipped field Subscription.Start with unsupported type: time.Time
 
-// skipped field Subscription.End with unsupported type: *types.Named
+// skipped field Subscription.End with unsupported type: time.Time
 
-// skipped field Subscription.Options with unsupported type: *types.Named
+// skipped field Subscription.Options with unsupported type: bitbucket.org/weproov/weproovstrucgo/rights.Options
 
-// skipped field Subscription.CacheControl with unsupported type: *types.Pointer
+// skipped field Subscription.CacheControl with unsupported type: *string
 
 @end
 
@@ -198,7 +200,7 @@ FOUNDATION_EXPORT const int64_t RightsTRIAL;
 FOUNDATION_EXPORT const int64_t RightsTRIALEXPIRED;
 
 @interface Rights : NSObject
-// skipped variable Current with unsupported type: *types.Named
+// skipped variable Current with unsupported type: bitbucket.org/weproov/weproovstrucgo/rights.Struct
 
 @end
 

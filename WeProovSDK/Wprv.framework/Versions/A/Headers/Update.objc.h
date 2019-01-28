@@ -9,6 +9,7 @@
 @import Foundation;
 #include "Universe.objc.h"
 
+#include "Config.objc.h"
 
 @class UpdateIosResults;
 @class UpdateIosStoreInfos;
@@ -28,7 +29,7 @@
 - (instancetype)init;
 - (long)resultCount;
 - (void)setResultCount:(long)v;
-// skipped field IosResults.Results with unsupported type: *types.Slice
+// skipped field IosResults.Results with unsupported type: []bitbucket.org/weproov/weproovstrucgo/updater.IosStoreInfos
 
 @end
 
@@ -38,9 +39,9 @@
 
 - (instancetype)initWithRef:(id)ref;
 - (instancetype)init;
-// skipped field IosStoreInfos.IpadScreenshotUrls with unsupported type: *types.Slice
+// skipped field IosStoreInfos.IpadScreenshotUrls with unsupported type: []string
 
-// skipped field IosStoreInfos.AppletvScreenshotUrls with unsupported type: *types.Slice
+// skipped field IosStoreInfos.AppletvScreenshotUrls with unsupported type: []string
 
 - (NSString*)artworkUrl60;
 - (void)setArtworkUrl60:(NSString*)v;
@@ -54,19 +55,19 @@
 - (void)setIsGameCenterEnabled:(BOOL)v;
 - (NSString*)kind;
 - (void)setKind:(NSString*)v;
-// skipped field IosStoreInfos.Features with unsupported type: *types.Slice
+// skipped field IosStoreInfos.Features with unsupported type: []string
 
-// skipped field IosStoreInfos.SupportedDevices with unsupported type: *types.Slice
+// skipped field IosStoreInfos.SupportedDevices with unsupported type: []string
 
-// skipped field IosStoreInfos.ScreenshotUrls with unsupported type: *types.Slice
+// skipped field IosStoreInfos.ScreenshotUrls with unsupported type: []string
 
-// skipped field IosStoreInfos.Advisories with unsupported type: *types.Slice
+// skipped field IosStoreInfos.Advisories with unsupported type: []string
 
 - (NSString*)trackViewUrl;
 - (void)setTrackViewUrl:(NSString*)v;
 - (NSString*)trackCensoredName;
 - (void)setTrackCensoredName:(NSString*)v;
-// skipped field IosStoreInfos.LanguageCodesISO2A with unsupported type: *types.Slice
+// skipped field IosStoreInfos.LanguageCodesISO2A with unsupported type: []string
 
 - (NSString*)fileSizeBytes;
 - (void)setFileSizeBytes:(NSString*)v;
@@ -76,7 +77,7 @@
 - (void)setContentAdvisoryRating:(NSString*)v;
 - (NSString*)trackContentRating;
 - (void)setTrackContentRating:(NSString*)v;
-// skipped field IosStoreInfos.GenreIds with unsupported type: *types.Slice
+// skipped field IosStoreInfos.GenreIds with unsupported type: []string
 
 - (NSString*)currentVersionReleaseDate;
 - (void)setCurrentVersionReleaseDate:(NSString*)v;
@@ -94,7 +95,7 @@
 - (void)setArtistId:(long)v;
 - (NSString*)artistName;
 - (void)setArtistName:(NSString*)v;
-// skipped field IosStoreInfos.Genres with unsupported type: *types.Slice
+// skipped field IosStoreInfos.Genres with unsupported type: []string
 
 - (double)price;
 - (void)setPrice:(double)v;
@@ -104,7 +105,7 @@
 - (void)setTrackName:(NSString*)v;
 - (NSString*)bundleId;
 - (void)setBundleId:(NSString*)v;
-// skipped field IosStoreInfos.ReleaseDate with unsupported type: *types.Named
+// skipped field IosStoreInfos.ReleaseDate with unsupported type: time.Time
 
 - (BOOL)isVppDeviceBasedLicensingEnabled;
 - (void)setIsVppDeviceBasedLicensingEnabled:(BOOL)v;

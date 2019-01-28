@@ -9,6 +9,7 @@
 @import Foundation;
 #include "Universe.objc.h"
 
+#include "Wperr.objc.h"
 
 @class RnHttpGolangWarperResponce;
 @protocol RnHttpGolangWarperDelegate;
@@ -24,7 +25,7 @@
 
 - (instancetype)initWithRef:(id)ref;
 - (instancetype)init;
-// skipped field HttpGolangWarperResponce.Wg with unsupported type: *types.Named
+// skipped field HttpGolangWarperResponce.Wg with unsupported type: sync.WaitGroup
 
 - (long)statusCode;
 - (void)setStatusCode:(long)v;
@@ -36,8 +37,16 @@
 - (void)setStringError:(NSString*)value;
 @end
 
-// skipped function Get with unsupported parameter or return types
-
+/**
+ * func Get(url string, token string) *HttpGolangWarperResponce {
+	resp := &HttpGolangWarperResponce{}
+	resp.Wg.Add(1)
+	C.getDataFromAsync(C.CString(url), C.CString(token), unsafe.Pointer(resp))
+	resp.Wg.Wait()
+	return resp
+}
+ */
+FOUNDATION_EXPORT RnHttpGolangWarperResponce* RnGet(NSString* url, NSString* token);
 
 FOUNDATION_EXPORT BOOL RnHaveDelegate(void);
 
