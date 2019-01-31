@@ -9,10 +9,6 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Config.objc.h"
-#include "Fscache.objc.h"
-#include "Utils.objc.h"
-#include "Wperr.objc.h"
 
 @class CachedimageStruct;
 @protocol CachedimageDelegate;

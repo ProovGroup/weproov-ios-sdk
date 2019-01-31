@@ -11,7 +11,6 @@
 
 #include "Cachedimage.objc.h"
 #include "Translations.objc.h"
-#include "User.objc.h"
 
 @class PackPacks;
 @class PackStruct;
@@ -29,7 +28,7 @@
 
 - (instancetype)initWithRef:(id)ref;
 - (instancetype)init;
-// skipped field Packs.Packs with unsupported type: []bitbucket.org/weproov/weproovstrucgo/pack.Struct
+// skipped field Packs.Packs with unsupported type: *types.Slice
 
 - (long)count;
 - (PackStruct*)get:(long)num;
@@ -49,15 +48,15 @@
 - (void)setTitle:(long)v;
 - (long)cachedId;
 - (void)setCachedId:(long)v;
-// skipped field Struct.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Struct.Title_ with unsupported type: *types.Named
 
 - (long)ask;
 - (void)setAsk:(long)v;
-// skipped field Struct.Ask_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Struct.Ask_ with unsupported type: *types.Named
 
-// skipped field Struct.Subpack with unsupported type: []bitbucket.org/weproov/weproovstrucgo/pack.Struct
+// skipped field Struct.Subpack with unsupported type: *types.Slice
 
-// skipped field Struct.PackIds with unsupported type: []int
+// skipped field Struct.PackIds with unsupported type: *types.Slice
 
 - (long)countSubpack;
 - (NSString*)getAskTr;

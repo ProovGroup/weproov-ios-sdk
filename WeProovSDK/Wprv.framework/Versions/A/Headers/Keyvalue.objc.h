@@ -9,7 +9,6 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Fscache.objc.h"
 
 FOUNDATION_EXPORT void KeyvalueDelete(NSString* key);
 

@@ -9,11 +9,10 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Translations.objc.h"
-#include "Wperr.objc.h"
-#include "S3image.objc.h"
 #include "Geoloc.objc.h"
 #include "Pulldownload.objc.h"
+#include "S3image.objc.h"
+#include "Translations.objc.h"
 
 @class ItemsChecklist;
 @class ItemsFormItemStruct;
@@ -72,11 +71,11 @@
 - (void)setItemsId:(long)v;
 - (long)title;
 - (void)setTitle:(long)v;
-// skipped field Checklist.CreatedAt with unsupported type: time.Time
+// skipped field Checklist.CreatedAt with unsupported type: *types.Named
 
-// skipped field Checklist.UpdatedAt with unsupported type: time.Time
+// skipped field Checklist.UpdatedAt with unsupported type: *types.Named
 
-// skipped field Checklist.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Checklist.Title_ with unsupported type: *types.Named
 
 @end
 
@@ -88,13 +87,13 @@
 - (instancetype)init;
 - (long)id_;
 - (void)setId:(long)v;
-// skipped field FormItemStruct.CreatedAt with unsupported type: time.Time
+// skipped field FormItemStruct.CreatedAt with unsupported type: *types.Named
 
-// skipped field FormItemStruct.UpdatedAt with unsupported type: time.Time
+// skipped field FormItemStruct.UpdatedAt with unsupported type: *types.Named
 
 - (long)title;
 - (void)setTitle:(long)v;
-// skipped field FormItemStruct.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field FormItemStruct.Title_ with unsupported type: *types.Named
 
 - (NSString*)name;
 - (void)setName:(NSString*)v;
@@ -104,7 +103,7 @@
 - (void)setValue:(NSString*)v;
 - (long)itemsId;
 - (void)setItemsId:(long)v;
-// skipped field FormItemStruct.Parameters with unsupported type: bitbucket.org/weproov/weproovstrucgo/items.InfosParameters
+// skipped field FormItemStruct.Parameters with unsupported type: *types.Named
 
 - (ItemsInfosParameters*)getParams;
 - (NSString*)getTr;
@@ -116,7 +115,7 @@
 
 - (instancetype)initWithRef:(id)ref;
 - (instancetype)init;
-// skipped field FormStruct.FormItems with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.FormItemStruct
+// skipped field FormStruct.FormItems with unsupported type: *types.Slice
 
 - (long)categoryId;
 - (void)setCategoryId:(long)v;
@@ -144,11 +143,11 @@
 - (void)setItemsId:(long)v;
 - (long)title;
 - (void)setTitle:(long)v;
-// skipped field Info.CreatedAt with unsupported type: time.Time
+// skipped field Info.CreatedAt with unsupported type: *types.Named
 
-// skipped field Info.UpdatedAt with unsupported type: time.Time
+// skipped field Info.UpdatedAt with unsupported type: *types.Named
 
-// skipped field Info.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Info.Title_ with unsupported type: *types.Named
 
 - (NSString*)getFormatedRow;
 @end
@@ -159,9 +158,9 @@
 
 - (instancetype)initWithRef:(id)ref;
 - (instancetype)init;
-// skipped field InfosParameters.List with unsupported type: []int
+// skipped field InfosParameters.List with unsupported type: *types.Slice
 
-// skipped field InfosParameters.List_ with unsupported type: []bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field InfosParameters.List_ with unsupported type: *types.Slice
 
 - (long)getListIdByPosition:(NSString*)tr;
 - (long)getListPosition:(long)pose;
@@ -183,7 +182,7 @@
 - (void)setLimit:(long)v;
 - (BOOL)haveMore;
 - (void)setHaveMore:(BOOL)v;
-// skipped field List.Result with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.Struct
+// skipped field List.Result with unsupported type: *types.Slice
 
 - (long)count;
 - (ItemsStruct*)get:(long)num;
@@ -202,9 +201,9 @@
 - (void)setName:(NSString*)v;
 - (long)s3pictureId;
 - (void)setS3pictureId:(long)v;
-// skipped field Process.Picture_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/items.s3picture
+// skipped field Process.Picture_ with unsupported type: *types.Named
 
-// skipped field Process.Infos with unsupported type: interface{}
+// skipped field Process.Infos with unsupported type: *types.Interface
 
 - (NSString*)type;
 - (void)setType:(NSString*)v;
@@ -212,11 +211,11 @@
 - (void)setItemsId:(long)v;
 - (long)title;
 - (void)setTitle:(long)v;
-// skipped field Process.CreatedAt with unsupported type: time.Time
+// skipped field Process.CreatedAt with unsupported type: *types.Named
 
-// skipped field Process.UpdatedAt with unsupported type: time.Time
+// skipped field Process.UpdatedAt with unsupported type: *types.Named
 
-// skipped field Process.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Process.Title_ with unsupported type: *types.Named
 
 - (NSData*)getData;
 @end
@@ -265,27 +264,27 @@
 - (void)setTitle:(long)v;
 - (long)ownerId;
 - (void)setOwnerId:(long)v;
-// skipped field Struct.Geoloc with unsupported type: bitbucket.org/weproov/weproovstrucgo/geoloc.Struct
+// skipped field Struct.Geoloc with unsupported type: *types.Named
 
 - (long)categoryId;
 - (void)setCategoryId:(long)v;
 - (long)s3pictureId;
 - (void)setS3pictureId:(long)v;
-// skipped field Struct.CreatedAt with unsupported type: time.Time
+// skipped field Struct.CreatedAt with unsupported type: *types.Named
 
-// skipped field Struct.UpdatedAt with unsupported type: time.Time
+// skipped field Struct.UpdatedAt with unsupported type: *types.Named
 
-// skipped field Struct.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Struct.Title_ with unsupported type: *types.Named
 
-// skipped field Struct.Preview with unsupported type: bitbucket.org/weproov/weproovstrucgo/items.s3picture
+// skipped field Struct.Preview with unsupported type: *types.Named
 
-// skipped field Struct.Infos with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.Info
+// skipped field Struct.Infos with unsupported type: *types.Slice
 
-// skipped field Struct.Checklists with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.Checklist
+// skipped field Struct.Checklists with unsupported type: *types.Slice
 
-// skipped field Struct.Supports with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.Support
+// skipped field Struct.Supports with unsupported type: *types.Slice
 
-// skipped field Struct.Process with unsupported type: []bitbucket.org/weproov/weproovstrucgo/items.Process
+// skipped field Struct.Process with unsupported type: *types.Slice
 
 /**
  * 	renvoy la version downloadable
@@ -345,7 +344,7 @@
 - (void)setName:(NSString*)v;
 - (long)s3pictureId;
 - (void)setS3pictureId:(long)v;
-// skipped field Support.Picture_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/items.s3picture
+// skipped field Support.Picture_ with unsupported type: *types.Named
 
 - (NSString*)type;
 - (void)setType:(NSString*)v;
@@ -353,11 +352,11 @@
 - (void)setItemsId:(long)v;
 - (long)title;
 - (void)setTitle:(long)v;
-// skipped field Support.CreatedAt with unsupported type: time.Time
+// skipped field Support.CreatedAt with unsupported type: *types.Named
 
-// skipped field Support.UpdatedAt with unsupported type: time.Time
+// skipped field Support.UpdatedAt with unsupported type: *types.Named
 
-// skipped field Support.Title_ with unsupported type: bitbucket.org/weproov/weproovstrucgo/translations.Translation
+// skipped field Support.Title_ with unsupported type: *types.Named
 
 - (NSData*)getData;
 @end

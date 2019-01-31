@@ -9,8 +9,6 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Utils.objc.h"
-#include "Wperr.objc.h"
 
 @class FscacheCache;
 

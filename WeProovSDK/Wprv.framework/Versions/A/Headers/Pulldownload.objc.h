@@ -9,8 +9,6 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Cachedimage.objc.h"
-#include "S3image.objc.h"
 
 @class PulldownloadStruct;
 @protocol PulldownloadDownloadable;
@@ -65,7 +63,7 @@
  */
 - (long)error;
 - (void)setError:(long)v;
-// skipped field Struct.Errors with unsupported type: []error
+// skipped field Struct.Errors with unsupported type: *types.Slice
 
 /**
  * 		Manager est la classe qui serviras pour les callback
@@ -129,9 +127,6 @@ FOUNDATION_EXPORT PulldownloadStruct* PulldownloadNew(id<PulldownloadManagerDele
 
 - (instancetype)initWithRef:(id)ref;
 - (id<PulldownloadDownloadable>)asDownloadable;
-/**
- * 		Download return Struct initialized
- */
 - (PulldownloadStruct*)download:(id<PulldownloadManagerDelegate>)delegate;
 @end
 

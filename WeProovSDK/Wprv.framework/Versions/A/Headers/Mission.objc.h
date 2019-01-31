@@ -9,10 +9,15 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Wperr.objc.h"
 #include "Cachedimage.objc.h"
+#include "Fscache.objc.h"
 #include "Geoloc.objc.h"
+#include "Items.objc.h"
+#include "Proover.objc.h"
+#include "Pulldownload.objc.h"
 #include "Report.objc.h"
+#include "S3image.objc.h"
+#include "Translations.objc.h"
 #include "User.objc.h"
 
 @class MissionList;
@@ -40,7 +45,7 @@
 - (void)setLimit:(long)v;
 - (BOOL)haveMore;
 - (void)setHaveMore:(BOOL)v;
-// skipped field List.Result with unsupported type: []bitbucket.org/weproov/weproovstrucgo/mission.Struct
+// skipped field List.Result with unsupported type: *types.Slice
 
 - (long)count;
 - (MissionStruct*)get:(long)num;
@@ -91,9 +96,9 @@
 - (void)setOwnerInfos:(UserStruct*)v;
 - (UserStruct*)receivedInfos;
 - (void)setReceivedInfos:(UserStruct*)v;
-// skipped field Struct.DueDate with unsupported type: time.Time
+// skipped field Struct.DueDate with unsupported type: *types.Named
 
-// skipped field Struct.StartDate with unsupported type: time.Time
+// skipped field Struct.StartDate with unsupported type: *types.Named
 
 - (void)downloadPictureMission:(id<CachedimageDelegate>)delegate;
 - (int64_t)getDueDateUnix;

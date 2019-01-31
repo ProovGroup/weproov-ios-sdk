@@ -9,7 +9,6 @@
 @import Foundation;
 #include "Universe.objc.h"
 
-#include "Wperr.objc.h"
 
 @class RnHttpGolangWarperResponce;
 @protocol RnHttpGolangWarperDelegate;
@@ -25,7 +24,7 @@
 
 - (instancetype)initWithRef:(id)ref;
 - (instancetype)init;
-// skipped field HttpGolangWarperResponce.Wg with unsupported type: sync.WaitGroup
+// skipped field HttpGolangWarperResponce.Wg with unsupported type: *types.Named
 
 - (long)statusCode;
 - (void)setStatusCode:(long)v;
