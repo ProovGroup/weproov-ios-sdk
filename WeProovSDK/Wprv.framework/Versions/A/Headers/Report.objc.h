@@ -19,6 +19,8 @@
 #include "Wperr.objc.h"
 
 @class ReportCProcess;
+@class ReportChange;
+@class ReportChangeStruct;
 @class ReportChecklist;
 @class ReportIdentifierItems;
 @class ReportImageMetaData;
@@ -34,6 +36,8 @@
 @class ReportStruct;
 @class ReportSupport;
 @class ReportUpload;
+@protocol ReportChangeHandler;
+@class ReportChangeHandler;
 @protocol ReportCloseDelegate;
 @class ReportCloseDelegate;
 @protocol ReportDeleteDelegate;
@@ -52,6 +56,10 @@
 @class ReportPhoto;
 @protocol ReportSignPartDelegate;
 @class ReportSignPartDelegate;
+
+@protocol ReportChangeHandler <NSObject>
+- (void)onChange:(ReportChange*)p0;
+@end
 
 @protocol ReportCloseDelegate <NSObject>
 - (void)onCloseError:(NSError*)err;
@@ -141,12 +149,35 @@
 
 @end
 
+@interface ReportChange : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) id _ref;
+
+- (instancetype)initWithRef:(id)ref;
+- (instancetype)init;
+- (int64_t)time;
+- (NSString*)value;
+@end
+
+@interface ReportChangeStruct : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) id _ref;
+
+- (instancetype)initWithRef:(id)ref;
+- (instancetype)init;
+- (ReportChange*)getLastChange;
+- (void)onChange:(NSString*)value;
+- (void)saveHandler:(id<ReportChangeHandler>)h;
+@end
+
 @interface ReportChecklist : NSObject <goSeqRefInterface, ReportField> {
 }
 @property(strong, readonly) id _ref;
 
 - (instancetype)initWithRef:(id)ref;
 - (instancetype)init;
+// skipped field Checklist.ChangeStruct with unsupported type: *types.Named
+
 /**
  * 		id de la checklist
 		dans la bdd 0 si non initiliser
@@ -242,6 +273,7 @@
  * 	Renvoyer la version caster en Field
  */
 - (id<ReportField>)getAsField;
+- (ReportChange*)getLastChange;
 /**
  * 	Renvoy toujour nil mais permet de corespondre au type field
  */
@@ -268,7 +300,9 @@
  * 	Permet de recuperer le nom du champs
  */
 - (NSString*)nameF;
+- (void)onChange:(NSString*)value;
 - (void)removeLink;
+- (void)saveHandler:(id<ReportChangeHandler>)h;
 - (void)setTemplateMode;
 - (NSString*)titleTr;
 /**
@@ -329,6 +363,8 @@
 
 - (instancetype)initWithRef:(id)ref;
 - (instancetype)init;
+// skipped field Info.ChangeStruct with unsupported type: *types.Named
+
 - (long)id_;
 - (void)setId:(long)v;
 - (long)titleId;
@@ -376,6 +412,7 @@
 - (void)createLink:(ReportStruct*)rpt part:(ReportPart*)part;
 - (NSString*)dropoffValueF;
 - (id<ReportField>)getAsField;
+- (ReportChange*)getLastChange;
 - (ReportInfosParameters*)getParams;
 - (ReportPart*)getPart;
 - (ReportStruct*)getReport;
@@ -383,7 +420,9 @@
 - (BOOL)isCompleted;
 - (BOOL)isRequire;
 - (NSString*)nameF;
+- (void)onChange:(NSString*)value;
 - (void)removeLink:(ReportStruct*)rpt part:(ReportPart*)part;
+- (void)saveHandler:(id<ReportChangeHandler>)h;
 - (void)setTemplateMode;
 - (NSString*)titleTr;
 /**
@@ -577,6 +616,8 @@
 
 - (instancetype)initWithRef:(id)ref;
 - (instancetype)init;
+// skipped field Process.ChangeStruct with unsupported type: *types.Named
+
 /**
  * 		Id du process dans la bdd
 		si = 0 le raport ne semble pas initialiser
@@ -683,6 +724,7 @@
 - (ReportProcessInfos*)dropoffInfosGet:(long)num;
 - (NSString*)getDropoffPicturePath;
 - (NSString*)getDropoffPicturePathS3;
+- (ReportChange*)getLastChange;
 - (NSString*)getPicturePath;
 - (NSString*)getPicturePathS3;
 /**
@@ -729,8 +771,10 @@
 - (ReportProcessInfos*)infosGet:(long)num;
 - (BOOL)isCompared;
 - (BOOL)isCompleted;
+- (void)onChange:(NSString*)value;
 - (void)removeLink;
 - (void)removeTemporary;
+- (void)saveHandler:(id<ReportChangeHandler>)h;
 - (void)setCompared:(BOOL)to;
 - (void)setTemplateMode;
 - (NSString*)titleTr;
@@ -1058,6 +1102,8 @@
 
 - (instancetype)initWithRef:(id)ref;
 - (instancetype)init;
+// skipped field Support.ChangeStruct with unsupported type: *types.Named
+
 - (long)id_;
 - (void)setId:(long)v;
 - (NSString*)name;
@@ -1117,6 +1163,7 @@
 - (NSString*)getDropinPath;
 - (NSString*)getDropoffPath;
 - (NSString*)getDropoffPicturePath;
+- (ReportChange*)getLastChange;
 /**
  * /////////////////////////////////////
  */
@@ -1159,11 +1206,13 @@
  */
 - (ReportProcessInfos*)infosGet:(long)num;
 - (BOOL)isCompleted;
+- (void)onChange:(NSString*)value;
 - (void)removeLink:(ReportStruct*)rpt part:(ReportPart*)part;
 /**
  * /////////	Photo Protocol /////////////
  */
 - (void)removeTemporary;
+- (void)saveHandler:(id<ReportChangeHandler>)h;
 - (void)setTemplateMode;
 - (NSString*)titleTr;
 - (long)uid;
@@ -1366,6 +1415,8 @@ FOUNDATION_EXPORT void ReportRestor(void);
  */
 FOUNDATION_EXPORT void ReportSaveReport(ReportStruct* r);
 
+@class ReportChangeHandler;
+
 @class ReportCloseDelegate;
 
 @class ReportDeleteDelegate;
@@ -1383,6 +1434,14 @@ FOUNDATION_EXPORT void ReportSaveReport(ReportStruct* r);
 @class ReportPhoto;
 
 @class ReportSignPartDelegate;
+
+@interface ReportChangeHandler : NSObject <goSeqRefInterface, ReportChangeHandler> {
+}
+@property(strong, readonly) id _ref;
+
+- (instancetype)initWithRef:(id)ref;
+- (void)onChange:(ReportChange*)p0;
+@end
 
 @interface ReportCloseDelegate : NSObject <goSeqRefInterface, ReportCloseDelegate> {
 }

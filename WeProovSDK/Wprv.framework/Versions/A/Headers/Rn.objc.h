@@ -36,15 +36,6 @@
 - (void)setStringError:(NSString*)value;
 @end
 
-/**
- * func Get(url string, token string) *HttpGolangWarperResponce {
-	resp := &HttpGolangWarperResponce{}
-	resp.Wg.Add(1)
-	C.getDataFromAsync(C.CString(url), C.CString(token), unsafe.Pointer(resp))
-	resp.Wg.Wait()
-	return resp
-}
- */
 FOUNDATION_EXPORT RnHttpGolangWarperResponce* RnGet(NSString* url, NSString* token);
 
 FOUNDATION_EXPORT BOOL RnHaveDelegate(void);
