@@ -42,6 +42,8 @@
 - (instancetype)init;
 - (NSString*)name;
 - (void)setName:(NSString*)v;
+- (NSString*)crmName;
+- (void)setCrmName:(NSString*)v;
 - (NSString*)type;
 - (void)setType:(NSString*)v;
 - (long)title;

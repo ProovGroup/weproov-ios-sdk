@@ -606,8 +606,8 @@
 - (void)updateByApi:(ReportPart*)n;
 - (void)updateByItem:(ItemsStruct*)item picture:(BOOL)picture;
 - (void)updateByProover:(ProoverStruct*)proover;
-- (void)writeSignature:(NSData*)data;
-- (void)writeSignatureSync:(NSData*)data;
+- (NSString*)writeSignature:(NSData*)data error:(NSError**)error;
+- (NSString*)writeSignatureSync:(NSData*)data error:(NSError**)error;
 @end
 
 @interface ReportProcess : NSObject <goSeqRefInterface> {

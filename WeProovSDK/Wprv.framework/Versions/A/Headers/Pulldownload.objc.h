@@ -97,6 +97,7 @@
 	@key = "image/{proov_code}/{hash}.jpeg"
  */
 - (BOOL)downloadDropoff:(NSString*)key;
+- (NSString*)getLastErrorString;
 - (BOOL)haveInCacheS3:(NSString*)key;
 - (BOOL)haveToDownload;
 - (void)printError;

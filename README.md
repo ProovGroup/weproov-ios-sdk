@@ -157,6 +157,13 @@ class CustomViewController: UIViewController {
             sself.downloader.load(proovCode: sself.proovCode)
         }
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // permet de fermer proprement le rapport
+        manager?.closeReport()
+    }
 }
 ```
 ### WPReportManagerDelegate
