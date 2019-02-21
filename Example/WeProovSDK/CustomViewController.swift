@@ -103,11 +103,8 @@ extension CustomViewController: WPReportManagerDelegate {
         title = manager.sections[section]
     }
 
-    func reportDidClose(manager _: WPReportManager) {
+    func reportDidClose(manager _: WPReportManager, state: WPReportCloseState) {
         navigationController?.popViewController(animated: true)
-    }
-    
-    func reportDidSubmit(manager _: WPReportManager) {
     }
 }
 

@@ -175,12 +175,8 @@ extension CustomViewController: WPReportManagerDelegate {
     }
 
     // appelé quand le rapport est fermé  
-    func reportDidClose(manager _: WPReportManager) {
+    func reportDidClose(manager: WPReportManager, state: WPReportCloseState) {
         dismiss()
-    }
-
-    // appelé quand le rapport est signé
-    func reportDidSubmit(manager _: WPReportManager) {
     }
 }
 ```

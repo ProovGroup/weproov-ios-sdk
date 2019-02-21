@@ -238,6 +238,12 @@ typedef SWIFT_ENUM(NSInteger, ReportState, closed) {
   ReportStateFinished = 2,
 };
 
+typedef SWIFT_ENUM(NSInteger, WPReportCloseState, closed) {
+  WPReportCloseStateCanceled = 0,
+  WPReportCloseStateSaved = 1,
+  WPReportCloseStateSubmitted = 2,
+};
+
 @class NSBundle;
 @class NSCoder;
 
@@ -347,9 +353,7 @@ SWIFT_PROTOCOL("_TtP10WeProovSDK23WPReportManagerDelegate_")
 /// Tells the delegate when the current section changed
 - (void)reportCurrentSectionDidChangeWithManager:(WPReportManager * _Nonnull)manager section:(NSInteger)section;
 /// Tells the delegate when the report is closed
-- (void)reportDidCloseWithManager:(WPReportManager * _Nonnull)manager;
-/// Tells the delegate when the report is submitted, always called before <code>reportClosed</code>
-- (void)reportDidSubmitWithManager:(WPReportManager * _Nonnull)manager;
+- (void)reportDidCloseWithManager:(WPReportManager * _Nonnull)manager state:(enum WPReportCloseState)state;
 @end
 
 @protocol WPReportUploaderDelegate;
@@ -406,15 +410,14 @@ SWIFT_CLASS("_TtC10WeProovSDK22WPReportViewController")
 
 @interface WPReportViewController (SWIFT_EXTENSION(WeProovSDK)) <WPReportManagerDelegate>
 - (void)reportCurrentSectionDidChangeWithManager:(WPReportManager * _Nonnull)manager section:(NSInteger)section;
-- (void)reportDidCloseWithManager:(WPReportManager * _Nonnull)_;
-- (void)reportDidSubmitWithManager:(WPReportManager * _Nonnull)_;
+- (void)reportDidCloseWithManager:(WPReportManager * _Nonnull)_ state:(enum WPReportCloseState)state;
 @end
 
 
 SWIFT_PROTOCOL("_TtP10WeProovSDK30WPReportViewControllerDelegate_")
 @protocol WPReportViewControllerDelegate
-/// Tell the delegate the controller is dismissed and if the report was submitted
-- (void)reportViewControllerDidDismissWithSubmitted:(BOOL)submitted;
+/// Tell the delegate the controller is dismissed
+- (void)reportViewControllerDidDismissWithState:(enum WPReportCloseState)state;
 @end
 
 @class UINavigationController;
