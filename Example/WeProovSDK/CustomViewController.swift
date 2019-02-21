@@ -65,7 +65,7 @@ extension CustomViewController: WPReportDownloaderDelegate {
             controller.updateProgression(value: 1)
             controller.dismiss(animated: true)
         }
-        var theme = WPTheme()
+        let theme = WPTheme()
         // Personalise les couleurs principal du framework
         theme.reportInitialColor = UIColor(red: 103 / 255, green: 187 / 255, blue: 15 / 255, alpha: 1)
         theme.reportFinalColor = UIColor(red: 103 / 255, green: 187 / 255, blue: 15 / 255, alpha: 1)
