@@ -24,6 +24,8 @@
 - (void)setNonce:(NSData*)v;
 @end
 
+FOUNDATION_EXPORT NSData* UtilsCompressToPng(NSData* data, NSError** error);
+
 // skipped function Copys with unsupported parameter or return types
 
 
