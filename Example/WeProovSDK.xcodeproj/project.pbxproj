@@ -297,7 +297,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ACEDrawingView/ACEDrawingView.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/JTMaterialSpinner/JTMaterialSpinner.framework",
@@ -318,7 +318,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CCD0FBDD0B4129D05B510698 /* [CP] Check Pods Manifest.lock */ = {

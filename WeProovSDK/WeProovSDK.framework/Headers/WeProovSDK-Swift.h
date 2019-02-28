@@ -163,8 +163,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
+@import AVFoundation;
 @import CoreGraphics;
 @import CoreLocation;
+@import CoreMedia;
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
@@ -201,6 +203,40 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
+
+SWIFT_CLASS("_TtC10WeProovSDK8WPCamera")
+@interface WPCamera : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class AVCaptureMetadataOutput;
+@class AVMetadataObject;
+@class AVCaptureConnection;
+
+@interface WPCamera (SWIFT_EXTENSION(WeProovSDK)) <AVCaptureMetadataOutputObjectsDelegate>
+- (void)captureOutput:(AVCaptureMetadataOutput * _Nonnull)_ didOutputMetadataObjects:(NSArray<AVMetadataObject *> * _Nonnull)metadataObjects fromConnection:(AVCaptureConnection * _Nonnull)_;
+@end
+
+@class AVCapturePhotoOutput;
+@class AVCapturePhoto;
+@class AVCaptureResolvedPhotoSettings;
+@class AVCaptureBracketedStillImageSettings;
+
+@interface WPCamera (SWIFT_EXTENSION(WeProovSDK)) <AVCapturePhotoCaptureDelegate>
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)_ didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error SWIFT_AVAILABILITY(ios,introduced=11.0);
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)_ didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef _Nullable)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef _Nullable)previewSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)_ bracketSettings:(AVCaptureBracketedStillImageSettings * _Nullable)_ error:(NSError * _Nullable)error;
+@end
+
+@class AVCaptureVideoPreviewLayer;
+
+SWIFT_PROTOCOL("_TtP10WeProovSDK16WPCameraDelegate_")
+@protocol WPCameraDelegate
+- (void)cameraAddCameraLayer:(AVCaptureVideoPreviewLayer * _Nonnull)cameraLayer;
+@optional
+- (void)cameraDidCaptureImage:(NSData * _Nonnull)imageData;
+- (void)cameraDidRecognizeQrCode:(NSString * _Nonnull)metadata;
+@end
 
 @class CLLocationManager;
 @class CLLocation;
