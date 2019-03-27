@@ -236,6 +236,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -297,7 +298,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ACEDrawingView/ACEDrawingView.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/JTMaterialSpinner/JTMaterialSpinner.framework",
@@ -318,7 +319,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeProovSDK_Example/Pods-WeProovSDK_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CCD0FBDD0B4129D05B510698 /* [CP] Check Pods Manifest.lock */ = {
@@ -505,7 +506,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ProovGroup.WeProovSDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -521,7 +522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ProovGroup.WeProovSDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
