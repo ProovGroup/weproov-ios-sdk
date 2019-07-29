@@ -1,30 +1,3 @@
-framework module "Wprv" {
-	header "ref.h"
-    header "Wprv.objc.h"
-    header "Cachedimage.objc.h"
-    header "Category.objc.h"
-    header "Mission.objc.h"
-    header "Config.objc.h"
-    header "Keyvalue.objc.h"
-    header "Pulldownload.objc.h"
-    header "Rights.objc.h"
-    header "S3image.objc.h"
-    header "Geoloc.objc.h"
-    header "Report.objc.h"
-    header "Templates.objc.h"
-    header "Items.objc.h"
-    header "User.objc.h"
-    header "Utils.objc.h"
-    header "Translations.objc.h"
-    header "Update.objc.h"
-    header "Fscache.objc.h"
-    header "Proover.objc.h"
-    header "Wperr.objc.h"
-    header "Pack.objc.h"
-    header "Team.objc.h"
-    header "Rn.objc.h"
-    header "Universe.objc.h"
-    header "Wprv.h"
-
-    export *
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b29435ee6c6229dbdd1d1b579bea35512663af54ccd7e1d50774f12e9e70d6d0
+size 772
