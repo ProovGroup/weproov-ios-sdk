@@ -20,9 +20,8 @@ it, simply add the following line to your Podfile:
 pod 'WeProovSDK', :git => 'https://github.com/ProovGroup/weproov-ios-sdk'
 ```
 
-### Include Framwork
-
-Dans le build setting verifier que la variable ``Enable bitcode`` est parametrer sur ``no`` (``ENABLE_BITCODE = NO``)
+Le repository utilise git lfs avant de faire un pod install verifier que se dernier est installé.
+https://git-lfs.github.com/
 
 ### Info.plist
 

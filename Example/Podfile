@@ -3,8 +3,8 @@ use_frameworks!
 platform :ios, '10.0'
 
 target 'WeProovSDK_Example' do
-#     pod 'WeProovSDK', :path => '../'
-	pod 'WeProovSDK'
+    pod 'WeProovSDK', :path => '../'
+	# pod 'WeProovSDK'
 
 	target 'WeProovSDK_Tests' do
 		inherit! :search_paths
