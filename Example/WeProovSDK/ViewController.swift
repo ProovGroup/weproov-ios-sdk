@@ -82,7 +82,7 @@ extension ViewController: WPReportDownloaderDelegate {
             controller.dismiss(animated: true)
         }
         // Creation d'un theme pour changer les couleur
-        var theme = WPTheme()
+        let theme = WPTheme()
         // change la couleur pour le rapport initial
         theme.reportInitialColor = UIColor(red: 103 / 255, green: 187 / 255, blue: 15 / 255, alpha: 1)
         // change la couleur pour le rapport final
