@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WeProovSDK'
-  s.version          = '1.2.9'
+  s.version          = '1.3.0'
   s.summary          = 'A short description of WeProovSDK'
   s.description      = 'A long description of WeProovSDK'
   s.license          = { :type => 'ProovGroup License', :file => 'LICENSE' }
@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.dependency 'ACEDrawingView', '~> 2.2'
   s.dependency 'FLAnimatedImage', '~> 1.0'
   s.dependency 'JTMaterialSpinner', '~> 3.0'
-  s.dependency 'MBProgressHUD', '~> 1.1'
+  s.dependency 'MBProgressHUD', '~> 1.1.0'
   s.dependency 'SnapKit', '~> 4.0'  
 end
