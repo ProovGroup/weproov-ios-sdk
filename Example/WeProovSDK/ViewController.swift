@@ -6,6 +6,10 @@ import UIKit
 import WeProovSDK
 
 class ViewController: UIViewController, WPUserDelegate {
+  func userNeedMultipleAuthentication(user: WPUser, _ processId: Int, webViewUrl url: String?) {
+    
+  }
+  
     
     func userDidConnect(user: WPUser){
         print("WeProov Connected")

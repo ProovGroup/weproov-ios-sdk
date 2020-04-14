@@ -4,11 +4,11 @@ PODS:
   - JTMaterialSpinner (3.0.5)
   - MBProgressHUD (1.1.0)
   - SnapKit (4.2.0)
-  - WeProovSDK (1.2.6):
+  - WeProovSDK (1.4.0):
     - ACEDrawingView (~> 2.2)
     - FLAnimatedImage (~> 1.0)
     - JTMaterialSpinner (~> 3.0)
-    - MBProgressHUD (~> 1.1)
+    - MBProgressHUD (~> 1.1.0)
     - SnapKit (~> 4.0)
 
 DEPENDENCIES:
@@ -32,8 +32,8 @@ SPEC CHECKSUMS:
   JTMaterialSpinner: 28a0444186b6b2df4206a77d12f7c9dcbe604958
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  WeProovSDK: b906fbc9a0f5efb62fc8e0ee27b1053308ac2b18
+  WeProovSDK: bf235bc09fb2a9b01404e6c6e1115dd1a3ea12bb
 
 PODFILE CHECKSUM: 70b1b48d18a5b1011f40e4b969899890dae59e29
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

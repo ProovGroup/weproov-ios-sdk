@@ -221,7 +221,6 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = NTX6F465S6;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -499,7 +498,7 @@
 			baseConfigurationReference = 3BCE9C96091FD4B7877295C7 /* Pods-WeProovSDK_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NTX6F465S6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeProovSDK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -515,7 +514,7 @@
 			baseConfigurationReference = 82832D8DC0554918E0B359DA /* Pods-WeProovSDK_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NTX6F465S6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeProovSDK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
