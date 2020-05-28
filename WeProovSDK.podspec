@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
   s.dependency 'JTMaterialSpinner', '~> 3.0'
   s.dependency 'MBProgressHUD', '1.1'
   s.dependency 'SnapKit', '~> 4.0'  
+  s.dependency 'SwiftRichString'
   s.dependency 'JTTableViewController', '~> 1.0.10'
   
 end
