@@ -25,12 +25,12 @@ https://git-lfs.github.com/
 
 ### Info.plist
 
-Allouer à l'app les droits de mise a jour en tache de fond  
+Allouer à l'app les droits de mise à jour en tache de fond  
 ```
 Background Fetch: capabilities -> Background Mode -> Background Fetch
 ```
 
-Ajouter les clées n'ecessaire pour avoir access a la camera et au gps dans 
+Ajouter les clées nécessaires pour avoir accès à la camera et au gps dans 
 ``Info.plist``
 ```
 <key>NSCameraUsageDescription</key>
@@ -49,7 +49,7 @@ import WeProovSDK
 
 ### Connection 
 
-Pour connceter le SDK avec WeProov 
+Pour connecter le SDK avec WeProov 
 ```
 // permet de s'avoire si le SDK est connecté
 WPUser.shared.connected
@@ -61,7 +61,7 @@ WPUser.shared.lang = "fr"
 
 ### Upload background
 
-Allouer à l'app les droits de mise a jour en tache de fond :   
+Allouer à l'app les droits de mise à jour en tâche de fond :   
 ``Background Fetch``  capabilities -> Background Mode -> Background Fetch
 WeProov utilise les BackgroundURLSession pour upload le rapport en background
 au lancement de l'app appeler: `` WPReportUploader.shared.sync() ``
@@ -116,7 +116,7 @@ WPUserDelegate
 
 ### Custom View 
 
-Nous allons faire en sorte que des que la vue est charger nous lancer un proovcode contenue dans le viewController
+Nous allons faire en sorte que lorsque la vue est chargée nous lançons un proovcode contenu dans le viewController
 ```
 class CustomViewController: UIViewController {
   // Contiens le proovCode à ouvrir 
