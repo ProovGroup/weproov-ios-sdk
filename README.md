@@ -11,6 +11,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+## Migration 1.4.x to 1.5.x
+
+If you were using version 1.4.x and need to update to 1.5.x please contact us to upgrade you access to the version. Thank you.
+
 ## Installation
 
 WeProovSDK is available through [CocoaPods](https://cocoapods.org). To install
@@ -49,11 +53,23 @@ import WeProovSDK
 
 ### Connection 
 
-Pour connecter le SDK avec WeProov 
+Pour connecter le SDK avec WeProov avant 1.5.x
 ```
 // permet de s'avoire si le SDK est connecté
 WPUser.shared.connected
 // permet de se connecter avec un token et un secret
+WPUser.shared.connect(token: "<TOKEN>", secret: "<SECRET>")
+// pour changer la lang default: "en"
+WPUser.shared.lang = "fr"
+```
+Pour connecter le SDK avec WeProov a partir de 1.5.x
+```
+// permet de s'avoire si le SDK est connecté
+WPUser.shared.connected
+//Donne les credentials au sdk
+WPUser.shared.setAppAuthCredentials(clientID: "<TOKEN>", secret: "<SECRET>")
+// permet de se connecter avec un token et un secret
+// A partir de > 1.5.1 cette methode ne prendra plus d'arguments
 WPUser.shared.connect(token: "<TOKEN>", secret: "<SECRET>")
 // pour changer la lang default: "en"
 WPUser.shared.lang = "fr"
@@ -86,6 +102,7 @@ gerer l'evenement dans le ``AppDelegate``:
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         ...
         if !WPUser.shared.connected {
+	    WPUser.shared.setAppAuthCredentials(clientID: "<TOKEN>", secret: "<SECRET>")
             WPUser.shared.connect(token: "<TOKEN>", secret: "<SECRET>")
         }
         WPReportUploader.shared.sync()
