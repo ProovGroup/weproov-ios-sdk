@@ -11,9 +11,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        WPUser.shared.logout()
         WPUser.shared.lang = "fr"
+        WPUser.shared.setAppAuthCredentials(clientID: "clientid", secret: "secret")
+        WPUser.shared.connect()
         WPReportUploader.shared.sync()
         WPLocationService.shared.startUpdateLocation()
+        
         return true
     }
 

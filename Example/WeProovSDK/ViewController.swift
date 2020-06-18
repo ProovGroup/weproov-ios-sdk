@@ -51,7 +51,8 @@ class ViewController: UIViewController, WPUserDelegate {
         WPUser.shared.logout()
         WPUser.shared.delegate = self
         if !WPUser.shared.connected {
-            WPUser.shared.connect(token: "<TOKEN>", secret: "<SECRET>")
+            WPUser.shared.setAppAuthCredentials(clientID: "", secret: "")
+            WPUser.shared.connect()
         }
         openButton.addTarget(self, action: #selector(openReport), for: .touchUpInside)
     }
