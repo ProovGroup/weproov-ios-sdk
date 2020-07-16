@@ -315,6 +315,7 @@
 				"${BUILT_PRODUCTS_DIR}/SignatureView/SignatureView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftRichString/SwiftRichString.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 				"${PODS_ROOT}/../../WeProovSDK/WeProovSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -330,6 +331,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SignatureView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRichString.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WeProovSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

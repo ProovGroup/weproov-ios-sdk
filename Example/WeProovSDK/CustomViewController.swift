@@ -73,7 +73,7 @@ extension CustomViewController: WPReportDownloaderDelegate {
         theme.termsOfServiceURL = URL(string: "https://www.example.com/tos")!
         theme.privacyURL = URL(string: "https://www.example.com/privacy")!
         
-        manager = WPReportManager(controller: self, report: report, theme: theme)
+        manager = WPReportManager(controller: self, report: report, theme: theme, enableDamageList: true)
         manager?.delegate = self
         manager?.load(reportView: reportView)
     }

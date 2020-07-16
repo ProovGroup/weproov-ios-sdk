@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         WPUser.shared.logout()
         WPUser.shared.lang = "fr"
-        WPUser.shared.setAppAuthCredentials(clientID: "clientid", secret: "secret")
+        WPUser.shared.setAppAuthCredentials(clientID: "client", secret: "secret")
         WPUser.shared.connect()
         WPReportUploader.shared.sync()
         WPLocationService.shared.startUpdateLocation()

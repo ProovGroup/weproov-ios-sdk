@@ -13,7 +13,8 @@ PODS:
   - SignatureView (1.1.0)
   - SnapKit (4.2.0)
   - SwiftRichString (3.7.1)
-  - WeProovSDK (1.5.1):
+  - Then (2.7.0)
+  - WeProovSDK (1.5.2):
     - ACEDrawingView (~> 2.2)
     - APAddressBook/Swift
     - FLAnimatedImage (~> 1.0)
@@ -24,6 +25,7 @@ PODS:
     - SignatureView (~> 1.1)
     - SnapKit (~> 4.0)
     - SwiftRichString
+    - Then (~> 2.7.0)
 
 DEPENDENCIES:
   - WeProovSDK (from `../`)
@@ -41,6 +43,7 @@ SPEC REPOS:
     - SignatureView
     - SnapKit
     - SwiftRichString
+    - Then
 
 EXTERNAL SOURCES:
   WeProovSDK:
@@ -58,7 +61,8 @@ SPEC CHECKSUMS:
   SignatureView: 23bb085add66110062decbfa899ed93d111b76e5
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftRichString: 9a6a70b4fe2cf428e38348b5ada5400da74621fd
-  WeProovSDK: 035ccc6cb2e3e74e2d6bb1c0eabf073edee93bc1
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  WeProovSDK: da0dc2df450de315ca0b01ffd2d910181fec944c
 
 PODFILE CHECKSUM: 70b1b48d18a5b1011f40e4b969899890dae59e29
 

@@ -208,6 +208,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SignatureView/SignatureView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftRichString/SwiftRichString.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
   install_framework "${PODS_ROOT}/../../WeProovSDK/WeProovSDK.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -222,6 +223,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SignatureView/SignatureView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftRichString/SwiftRichString.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
   install_framework "${PODS_ROOT}/../../WeProovSDK/WeProovSDK.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

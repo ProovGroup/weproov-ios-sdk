@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WeProovSDK'
-  s.version          = '1.5.2'
+  s.version          = '1.5.3'
   s.summary          = 'A short description of WeProovSDK'
   s.description      = 'A long description of WeProovSDK'
   s.license          = { :type => 'ProovGroup License', :file => 'LICENSE' }
@@ -21,5 +21,6 @@ Pod::Spec.new do |s|
   s.dependency 'SnapKit', '~> 4.0'
   s.dependency 'SwiftRichString'
   s.dependency 'JTTableViewController', '~> 1.0.10'
+  s.dependency 'Then', '~> 2.7.0'
 
 end
