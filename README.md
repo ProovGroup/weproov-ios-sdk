@@ -5,19 +5,20 @@
 [![License](https://img.shields.io/cocoapods/l/WeProovSDK.svg?style=flat)](https://cocoapods.org/pods/WeProovSDK)
 [![Platform](https://img.shields.io/cocoapods/p/WeProovSDK.svg?style=flat)](https://cocoapods.org/pods/WeProovSDK)
 
-## Version 1.5.7
+## Version 1.5.8
 
-WeProovSDK 1.5.7 is bluid with XCode 12 Swift Compiler 5.3
+WeProovSDK 1.5.8 is bluid with XCode 12 Swift Compiler 5.3
 
 Update: 
+
 
 The bitcode issue is resolved and is now available on this version. (⚠️To use this version, please make sure to you use XCode 12 and enable your bitcode if you need it. If you use an older version please disable your bitcode because it contain the following issue.⚠️)
 The WPReportManager init has changed and doesn't containt `enableDamageList:Bool` parameter anymore. This is explain because this option is not available to developpers.
 
 🚑  Correction :
 
-- Correction to block retake of picture if this one is a locked support document of formular.
-- Add of an upload pop-up containing a progress bar to confirm that the report was sent successfully.
+- Fixed the bug preventing the smooth running of the pictures process. 
+- Update of the upload pop-up containing a progress bar to confirm that the report was sent successfully to a controller.
 
 ## Example
 
