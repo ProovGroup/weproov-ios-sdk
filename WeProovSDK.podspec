@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WeProovSDK'
-  s.version          = '1.5.8'
+  s.version          = '1.5.9'
   s.summary          = 'A short description of WeProovSDK'
   s.description      = 'A long description of WeProovSDK'
   s.license          = { :type => 'ProovGroup License', :file => 'LICENSE' }
