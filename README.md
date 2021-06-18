@@ -5,9 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/WeProovSDK.svg?style=flat)](https://cocoapods.org/pods/WeProovSDK)
 [![Platform](https://img.shields.io/cocoapods/p/WeProovSDK.svg?style=flat)](https://cocoapods.org/pods/WeProovSDK)
 
-## Version 1.5.8
+## Version 1.5.9
 
-WeProovSDK 1.5.8 is bluid with XCode 12 Swift Compiler 5.3
+WeProovSDK 1.5.9 is bluid with XCode 12.5 Swift Compiler 5.4
 
 Update: 
 
