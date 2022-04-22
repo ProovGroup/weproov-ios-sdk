@@ -1,0 +1,18 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'WeProovSDK_Example' do
+  pod 'WeProovSDK', :path => '../'
+#	pod 'WeProovSDK', :git => 'https://github.com/ProovGroup/weproov-ios-sdk'
+
+	target 'WeProovSDK_Tests' do
+		inherit! :search_paths
+	end
+end
+
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+end
