@@ -5,14 +5,13 @@
 [![License](https://img.shields.io/cocoapods/l/WeProovSDK.svg?style=flat)](https://cocoapods.org/pods/WeProovSDK)
 [![Platform](https://img.shields.io/cocoapods/p/WeProovSDK.svg?style=flat)](https://cocoapods.org/pods/WeProovSDK)
 
-## Version 1.6.1
+## Version 1.6.2
 
-WeProovSDK 1.6.1 is bluid with XCode 13.3 Swift Compiler 5.6
+WeProovSDK 1.6.2 is bluid with XCode 14.0.1 Swift Compiler 5.6
+His min version is iOS 12.1.
 
-Update: 
+⚠️ Update: Since XCode 14.0.1 use bitcode is deprecaded. Therefore we have disable the bitcode.
 
-
-The bitcode issue is resolved and is now available on this version. (⚠️To use this version, please make sure to you use XCode 12 and enable your bitcode if you need it. If you use an older version please disable your bitcode because it contain the following issue.⚠️)
 The WPReportManager init has changed and doesn't containt `enableDamageList:Bool` parameter anymore. This is explain because this option is not available to developpers.
 
 🚑  Correction :
