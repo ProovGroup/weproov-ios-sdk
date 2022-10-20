@@ -8,12 +8,11 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/ProovGroup/weproov-ios-sdk'
   s.source           = { :git => 'https://github.com/ProovGroup/weproov-ios-sdk.git', :tag => s.version.to_s }
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1' }
   s.ios.deployment_target = '12.1'
   s.swift_versions = '5.0'
   s.ios.vendored_frameworks = ['WeProovSDK/WeProovSDK.framework' ]
   s.preserve_paths = 'WeProovSDK/Wprv.framework'
-  # s.dependency 'WeProovWprv'
   s.dependency 'APAddressBook/Swift'
     s.dependency 'JTBorderDotAnimation', '~> 1.0'
      s.dependency 'SignatureView', '~> 1.1'
