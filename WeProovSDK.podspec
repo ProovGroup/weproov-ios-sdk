@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.author           = 'ProovGroup'
   s.homepage         = 'https://github.com/ProovGroup/weproov-ios-sdk'
   s.source           = { :git => 'https://github.com/ProovGroup/weproov-ios-sdk.git', :tag => s.version.to_s }
+  s.platform = :ios, "12.1"
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1' }
   s.ios.deployment_target = '12.1'
