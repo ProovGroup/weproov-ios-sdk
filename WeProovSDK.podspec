@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   s.name             = 'WeProovSDK'
   s.version          = '1.6.2'
-  s.summary          = 'A short description of WeProovSDK'
-  s.description      = 'A long description of WeProovSDK'
+  s.summary          = 'WeProovSDK is an extension deploy by WeProov'
+  s.description      = 'WeProovSDK is an extension of WeProov tools to complete report with multiple features.'
   s.license          = { :type => 'ProovGroup License', :file => 'LICENSE' }
   s.author           = 'ProovGroup'
   s.homepage         = 'https://github.com/ProovGroup/weproov-ios-sdk'
   s.source           = { :git => 'https://github.com/ProovGroup/weproov-ios-sdk.git', :tag => s.version.to_s }
   s.platform = :ios, "12.1"
-  
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1' }
   s.ios.deployment_target = '12.1'
   s.swift_versions = '5.0'
@@ -24,6 +24,5 @@ Pod::Spec.new do |s|
   s.dependency 'SwiftRichString'
   s.dependency 'JTTableViewController', '~> 1.0.10'
   s.dependency 'Then', '~> 2.7.0'
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'IPHONEOS_DEPLOYMENT_TARGET' => '12.1' }
 
 end
