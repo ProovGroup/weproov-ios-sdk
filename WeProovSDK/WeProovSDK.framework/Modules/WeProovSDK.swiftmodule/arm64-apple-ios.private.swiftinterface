@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name WeProovSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -7,18 +7,18 @@ import Accelerate
 import AudioToolbox.AudioServices
 import AudioToolbox
 import Contacts
+import CoreGraphics
 import CoreVideo
 import FLAnimatedImage
 import Foundation
 import ImageIO
-import JTMaterialSpinner
 import MBProgressHUD
 import MapKit
 import SnapKit
 import Swift
 import SwiftRichString
 import SwiftyDraw
-import Then
+import UIKit.UIGeometry
 import UIKit
 import Vision
 @_exported import WeProovSDK
@@ -77,6 +77,46 @@ public struct WPListItem<T> : Swift.Hashable where T : Swift.Hashable {
   @objc public func locationManager(_: CoreLocation.CLLocationManager, didChangeAuthorization: CoreLocation.CLAuthorizationStatus)
   @objc public func locationManager(_: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
   @objc deinit
+}
+public protocol Then {
+}
+extension WeProovSDK.Then {
+  @inlinable public func with(_ block: (inout Self) throws -> Swift.Void) rethrows -> Self {
+    var copy = self
+    try block(&copy)
+    return copy
+  }
+  @inlinable public func `do`(_ block: (Self) throws -> Swift.Void) rethrows {
+    try block(self)
+  }
+}
+extension WeProovSDK.Then where Self : AnyObject {
+  @inlinable public func then(_ block: (Self) throws -> Swift.Void) rethrows -> Self {
+    try block(self)
+    return self
+  }
+}
+extension ObjectiveC.NSObject : WeProovSDK.Then {
+}
+extension CoreFoundation.CGPoint : WeProovSDK.Then {
+}
+extension CoreFoundation.CGRect : WeProovSDK.Then {
+}
+extension CoreFoundation.CGSize : WeProovSDK.Then {
+}
+extension CoreFoundation.CGVector : WeProovSDK.Then {
+}
+extension Swift.Array : WeProovSDK.Then {
+}
+extension Swift.Dictionary : WeProovSDK.Then {
+}
+extension Swift.Set : WeProovSDK.Then {
+}
+extension UIKit.UIEdgeInsets : WeProovSDK.Then {
+}
+extension UIKit.UIOffset : WeProovSDK.Then {
+}
+extension UIKit.UIRectEdge : WeProovSDK.Then {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class WPReportView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
@@ -196,7 +236,7 @@ extension WeProovSDK.WPReportViewController : WeProovSDK.WPReportManagerDelegate
   @_Concurrency.MainActor(unsafe) @objc dynamic public func reportDidClose(manager _: WeProovSDK.WPReportManager, state: WeProovSDK.WPReportCloseState)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class WPTableLoaderView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) final public let spinnerView: JTMaterialSpinner.JTMaterialSpinner
+  @_Concurrency.MainActor(unsafe) final public let spinnerView: WeProovSDK.JTMaterialSpinner
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame _: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) open func beginRefreshing()
@@ -333,7 +373,23 @@ extension WeProovSDK.WPReportDownloader : Wprv.ReportFullDelegateProtocol {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func loadView()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc public class WPReport : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class JTMaterialSpinner : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) final public let circleLayer: QuartzCore.CAShapeLayer
+  @_Concurrency.MainActor(unsafe) open var isAnimating: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var animationDuration: Swift.Double
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) open func commonInit()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) open func updateCircleLayer()
+  @_Concurrency.MainActor(unsafe) open func forceBeginRefreshing()
+  @_Concurrency.MainActor(unsafe) open func beginRefreshing()
+  @_Concurrency.MainActor(unsafe) open func endRefreshing()
+  @objc deinit
+}
+@objc public class WPReport : ObjectiveC.NSObject {
   @objc public enum ReportState : Swift.Int {
     case pendingFirst, pendingSecond, finished
     public init?(rawValue: Swift.Int)
@@ -355,6 +411,7 @@ extension WeProovSDK.WPReportDownloader : Wprv.ReportFullDelegateProtocol {
   public var canBeSaved: Swift.Bool {
     get
   }
+  public init(wpReport: Wprv.ReportStruct)
   @objc public func state() -> WeProovSDK.WPReport.ReportState
   public func importItem(item: Wprv.ItemsStruct, pictures: Swift.Bool)
   @objc deinit
@@ -542,6 +599,10 @@ extension Foundation.NSNotification.Name {
   public static let currentSectionDidChange: Foundation.Notification.Name
   public static let sectionErrorsDidChange: Foundation.Notification.Name
   public static let localeDidChange: Foundation.Notification.Name
+}
+@objc public protocol CameraInferenceDelegate {
+  @objc func isACar(cgimage: CoreGraphics.CGImage) -> Swift.Bool
+  @objc func isBlur(image: UIKit.UIImage) -> Swift.Bool
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class WPReportDownloadViewController : WeProovSDK.WPVC {
   @objc @_Concurrency.MainActor(unsafe) weak public var delegate: WeProovSDK.WPReportDownloadViewControllerDelegate?
