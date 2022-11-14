@@ -35,7 +35,18 @@ WeProovSDK is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'WeProovSDK', :git => 'https://github.com/ProovGroup/weproov-ios-sdk'
+target 'YOUR_PROJECT' do
+  pod 'WeProovSDK', :git => 'https://github.com/ProovGroup/weproov-ios-sdk'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.1'
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+  end
+end
 ```
 
 Le repository utilise git lfs avant de faire un pod install verifier que se dernier est installé.
