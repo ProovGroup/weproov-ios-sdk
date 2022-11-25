@@ -24,6 +24,6 @@ Pod::Spec.new do |s|
   s.dependency 'SnapKit', '~> 4.0'
   s.dependency 'SwiftRichString'
   #s.dependency 'JTTableViewController', '~> 1.0.10'
-  #s.dependency 'Then', '~> 2.7.0'
+  s.dependency 'Then', '~> 2.7.0'
 
 end
