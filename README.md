@@ -30,9 +30,9 @@ Pour exécuter le projet exemple, cloner le repo, et exécuter la commande `pod 
 
 ## Prérequis
 
-## Migration 1.4.x to 1.5.x
+## Migration 1.4.x vers 1.5.x ou 1.6.x du SDK
 
-Si vous utilisez la version 1.4.x et nécessite une mise à jours vers la version 1.5.x merci de nous contacter pour mettre à jours vos accès à la nouvelle version. Merci.
+Si vous utilisez la version 1.4.x et nécessite une mise à jours vers la version 1.5.x ou 1.6.x merci de nous contacter pour mettre à jours vos accès à la nouvelle version. Merci.
 
 ## Instatllation
 
