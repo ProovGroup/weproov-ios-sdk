@@ -7,32 +7,36 @@
 
 ## Version 1.6.2
 
-WeProovSDK 1.6.2 is bluid with XCode 14.0.1 Swift Compiler 5.6
-His min version is iOS 12.1.
+WeProovSDK 1.6.1 a été réaliser avec XCode 13.4.1 et le Compilateur Swift 5.6
+La version minimum nécessaire est 12.1
 
-⚠️ Update: Since XCode 14.0.1 use bitcode is deprecaded. Therefore we have disable the bitcode.
+Certaines contrainte de développement nous oblige à utiliser uniquement la version arm64 de notre build il est donc impossible d'utiliser les simulateurs.
 
-The WPReportManager init has changed and doesn't containt `enableDamageList:Bool` parameter anymore. This is explain because this option is not available to developpers.
+En dehors de ces critères, nous ne sommes pas en mesure d'assurer le bon fonctionnement de notre SDK.
+Tout cas en dehors de ces critères necessitera une demande de développement.
+
+⚠️ Attention: Depuis XCode 14.0.1 utiliser bitcode est déprécié. il sera donc nécessaire de désactiver le bitcode dans les paramètres de votre projet.
+
+La fonction init de la classe WPReportManager à changé et ne contient plus le paramètre suivant `enableDamageList:Bool`. Ceci s'explique car l'option n'est pas disponble pour les développeurs. 
 
 🚑  Correction :
 
-- Fixed the bug preventing the smooth running of the pictures process. 
-- Update of the upload pop-up containing a progress bar to confirm that the report was sent successfully to a controller.
+- Correction du bug empêchant le bon déroulement du traitement des photos.
+- Mise à jour de la pop-up de téléchargement contenant une barre de progression pour confirmer que le rapport a bien été envoyé à un contrôleur.
 
-## Example
+## Exemple
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Pour exécuter le projet exemple, cloner le repo, et exécuter la commande `pod install` depuis le dossier Example dans un premier temps.
 
-## Requirements
+## Prérequis
 
 ## Migration 1.4.x to 1.5.x
 
-If you were using version 1.4.x and need to update to 1.5.x please contact us to upgrade you access to the version. Thank you.
+Si vous utilisez la version 1.4.x et nécessite une mise à jours vers la version 1.5.x merci de nous contacter pour mettre à jours vos accès à la nouvelle version. Merci.
 
-## Installation
+## Instatllation
 
-WeProovSDK is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+WeProovSDK est disponible sur CocoaPods [CocoaPods](https://cocoapods.org). Pour l'installer, ajouter simplement la ligne suivante à votre Podfile:
 
 ```ruby
 target 'YOUR_PROJECT' do
@@ -49,7 +53,6 @@ post_install do |installer|
   end
 end
 ```
-
 Le repository utilise git lfs avant de faire un pod install verifier que se dernier est installé.
 https://git-lfs.github.com/
 
@@ -70,7 +73,6 @@ Ajouter les clées nécessaires pour avoir accès à la camera et au gps dans
 <key>NSLocationWhenInUseUsageDescription</key>
 <string>Location required</string>
 ```
-
 ### Import
 
 ```
@@ -81,23 +83,23 @@ import WeProovSDK
 
 Pour connecter le SDK avec WeProov avant 1.5.x
 ```
-// permet de s'avoire si le SDK est connecté
+// permet de savoir si le SDK est connecté
 WPUser.shared.connected
 // permet de se connecter avec un token et un secret
 WPUser.shared.connect(token: "<TOKEN>", secret: "<SECRET>")
-// pour changer la lang default: "en"
+// pour changer la langue default: "en"
 WPUser.shared.lang = "fr"
 ```
 Pour connecter le SDK avec WeProov a partir de 1.5.x
 ```
-// permet de s'avoire si le SDK est connecté
+// permet de savoir si le SDK est connecté
 WPUser.shared.connected
 //Donne les credentials au sdk
 WPUser.shared.setAppAuthCredentials(clientID: "<TOKEN>", secret: "<SECRET>")
 // permet de se connecter avec un token et un secret
 // A partir de > 1.5.1 cette methode ne prendra plus d'arguments
 WPUser.shared.connect(token: "<TOKEN>", secret: "<SECRET>")
-// pour changer la lang default: "en"
+// pour changer la langue default: "en"
 WPUser.shared.lang = "fr"
 ```
 
@@ -125,7 +127,7 @@ gerer l'evenement dans le ``AppDelegate``:
 
 ```
 
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         ...
         if !WPUser.shared.connected {
 	    WPUser.shared.setAppAuthCredentials(clientID: "<TOKEN>", secret: "<SECRET>")
@@ -145,13 +147,14 @@ gerer l'evenement dans le ``AppDelegate``:
         completionHandler()
     }
 ```
+
 WPUserDelegate
 ```
     func userDidConnect(user: WPUser){
         print("WeProov Connected")
     }
     
-    /// Tells the delegate when the user failed to connect
+    /// Indication du delegate quand la connexion de l'utilisateur à échoué
     func userFailedToConnect(user: WPUser, error: Error?){
         print("WeProov Connect Error \(error!.localizedDescription)")
     }
@@ -208,6 +211,7 @@ class CustomViewController: UIViewController {
     }
 }
 ```
+
 ### WPReportManagerDelegate
 ```
 extension CustomViewController: WPReportManagerDelegate {
@@ -228,7 +232,7 @@ extension CustomViewController: WPReportManagerDelegate {
 ```
 extension CustomViewController: WPReportDownloadViewControllerDelegate {
     func reportCancelDownload() {
-        // Cannot stop downloader, so create a new one
+        // Il est impossible d'arreter le downloader, donc créez en un nouveau
         downloader.delegate = nil
         downloader = WPReportDownloader()
         downloader.delegate = self
@@ -241,14 +245,14 @@ extension CustomViewController: WPReportDownloadViewControllerDelegate {
 extension CustomViewController: WPReportDownloaderDelegate {
     func reportLoading(downloader _: WPReportDownloader) {}
     
-    // appeler lors de la progression du telechargement
+    // appelé lors de la progression du telechargement
     func reportLoadingProgress(downloader _: WPReportDownloader, progress: Float) {
         if let controller = presentedViewController as? WPReportDownloadViewController {
             controller.updateProgression(value: progress)
         }
     }
 
-    // appeler lorsque le rapport est pres a etre afficher
+    // appelé lorsque le rapport est prèt à être affiché
     func reportDidLoad(downloader _: WPReportDownloader, report: WPReport) {
         if let controller = presentedViewController as? WPReportDownloadViewController {
             controller.updateProgression(value: 1)
@@ -256,7 +260,7 @@ extension CustomViewController: WPReportDownloaderDelegate {
         }
         
         var theme = WPTheme()
-        // Personalise les couleurs principal du framework
+        // Personalise les couleurs principales du framework
         theme.reportInitialColor = UIColor(hexString: "#67BB0F9")
         theme.reportFinalColor = UIColor(hexString: "#67BB0F9")
 
@@ -275,13 +279,13 @@ extension CustomViewController: WPReportDownloaderDelegate {
         print("reportFailedToLoad", error ?? "unknown error")
     }
     
-    // permet de savoir si le la page d'une section dois etre visible ou non
+    // permet de savoir si la page d'une section dois etre visible ou non
     func reportCanShowSection(downloader _: WPReportDownloader, section: Int) -> Bool {
         return true
     }
 
-    // permet de savoir si la page peremet d'importer depuis son part / profile
-    // attention permet de voire tout le carnet d'adresse / parc de bien
+    // permet de savoir si la page permet d'importer depuis son part / profile
+    // attention permet de voir tout le carnet d'adresse / parc de bien
     func reportCanShowSectionImport(downloader _: WPReportDownloader, section _: Int) -> Bool {
         return true
     }
